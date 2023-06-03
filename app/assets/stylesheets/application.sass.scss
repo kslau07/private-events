@@ -1,1 +1,13 @@
 // app/assets/stylesheets/application.sass.scss
+
+// BEM
+// A "card" is a block (ie component)
+// A card may have many elements. A card probably has a title and body.
+//    .card__title and .card__body is how we name these block elements
+// A card may have many variants or "modifiers", eg sizes, colors
+//    .card--big and .card--red is how we name these modifiers
+
+// Config
+@import "config/variables";
+@import "config/reset";
+
