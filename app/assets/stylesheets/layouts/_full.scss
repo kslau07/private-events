@@ -1,0 +1,14 @@
+.full {
+	display: grid;
+	grid-template-areas: 
+	"announcement"
+	"navbar"
+	"main"
+	"footer";
+	grid-template-rows:	25px 100px 1fr;
+  height: 100%;
+}
+
+.main {
+	grid-area: main;
+}

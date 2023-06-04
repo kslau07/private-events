@@ -1,0 +1,3 @@
+@mixin gizmo($gizmo: 'green') {
+  outline: 3px dashed $gizmo;
+}

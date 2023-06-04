@@ -1,5 +1,7 @@
 // app/assets/stylesheets/application.sass.scss
 
+// https://en.bem.info/methodology/
+
 // BEM
 // A "card" is a block (ie component)
 // A card may have many elements. A card probably has a title and body.
@@ -10,4 +12,17 @@
 // Config
 @import "config/variables";
 @import "config/reset";
+
+// Mixins
+@import "mixins/mixins";
+
+// Layouts
+@import "layouts/full";
+
+// Components
+@import "components/announcement";
+@import "components/navbar";
+@import "components/company-name";
+@import "components/container";
+@import "components/footer";
 
