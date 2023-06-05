@@ -1,0 +1,11 @@
+.links {
+	display: flex;
+	flex-grow: 1;
+	gap: 2rem;
+	outline: 2px dashed green;					// delete me
+	// width: 50vw;
+
+	&--split {
+		margin-right: auto;
+	}
+}

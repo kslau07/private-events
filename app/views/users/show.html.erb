@@ -1,0 +1,6 @@
+<%= @user.email %>
+<% @user.events.each do |event| %>
+	<div>
+		<%= event.event_date %>
+	</div>
+<% end %>

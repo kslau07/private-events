@@ -1,0 +1,7 @@
+.link {
+	min-width: max-content;
+
+	&--active {
+		background-color: var(--color-one);
+	}
+}

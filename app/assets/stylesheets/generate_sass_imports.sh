@@ -1,14 +1,13 @@
 #! /bin/bash
 
-# This script creates a file named application.sass.scss
-# which generates directories and @imports
+# This script populates application.sass.scss with imports from each directory
 
 # Capitalize first letter of directory
 
 # Afterwards: Instead of just overwriting scss file, copy old file to file-previous.sass.scss
 # Add time stamp to old copy
 
-# Order is:
+# Order of imports is:
 # config/variables
 # config/reset
 # mixins
@@ -27,134 +26,86 @@ sass_file=$SCRIPT_PATH/'application.sass.scss'
 dir_arr=($(cd $SCRIPT_PATH; find . -print))
 len=${#dir_arr[@]}
 
-# Remove dot
+# Remove any items that are just a dot
 for (( i=0; i<$len; i++ )); do
 	if [[ "${dir_arr[i]}" == "." ]]; then
 		unset "dir_arr[i]"
 	fi
 done
 
-# demo_multiple_arrays() {
-#   local -n arr1=$1
-#   local -n arr2=$2
-#   printf '2: %q\n' "${arr2[@]}"
-#   printf '1: %q\n' "${arr1[@]}"
-# 	echo "${arr1[@]}"
-# 	echo "${arr2[@]}"
-# }
-# array_one=( "one argument" "another argument" )
-# array_two=( "array two part one" "array two part two" )
-# demo_multiple_arrays array_one array_two
+# Temp array for dir_arr
+array2=()
 
-temp=()
 remove_substr () { 
-	local -n arr1=$1
-	length=${#arr1[@]}
+	index=0
+	local -n _array1=$1
+	local -n _array2=$2
+	substr=$3
 
-	temp2=()
-	# temp2+=('foo')
+	len_array1=${#_array1[@]}
 
-	for (( i=0; i<$length; i++ )); do
-		str=$(echo "${arr1[i]}" | sed "s/.\///")
-		temp2+=($str)
+	# for (( i=0; i<$len_array1; i++ )); do
+	# 	str=$(echo "${_array1[i]}" | sed "s/$substr//")
+	# 	_array2+=($str)
+	# done
+
+	# Alternative way
+	for item in "${_array1[@]}"; do
+			item_cut=$(echo "$item" | sed "s/$substr//")
+			_array2["$index"]="$item_cut"
+			((index++))
 	done
-
-	echo "${temp2[@]}"
 }
+remove_substr dir_arr array2 ".\/"
 
-len_temp=${#temp[@]}
-echo $len_temp
-# echo "${temp[@]}"
+# Set array2 to dir_arr (remember to use parens for setting an arr)
+dir_arr=(${array2[@]})
 
-remove_substr dir_arr
-
-# Remove _
-# temp=("one" "two")
-# dir_arr=()
-# dir_arr=("${temp[@]}") # copy array
-
-# len=${#dir_arr[@]}
-# echo $len
-
-# Remove first item which is a dot(.)
-# dir_arr=("${dir_arr[@]:1}")
-# dir_arr=$("$dir_arr" | sed "s/_//g")				# remove _
-# dir_arr=$("$dir_arr" | sed "s/.//g")				# remove ./
-
-# Loop through array to see what's in it
-# for (( i=0; i<$len; i++ )); do echo item: ${dir_arr[i]}; done
-
+# Manually add config dir first
 multi_string="// config
 @import 'config/variables';
 @import 'config/reset';"
-
-# Quote "" to preserve new lines
-echo "$multi_string" >> $sass_file
+echo "$multi_string" >> $sass_file				# Use "" to keep new lines
 
 # List of items to remove from dir_arr
 not_needed_arr=("config" "sass")
 len_not_needed=${#not_needed_arr[*]}
 
-# Remove unwanted items from array
-# Uses nested loop, dir_arr & not_needed_arr
+# Remove unwanted items from dir_arr
+# Uses nested loop (dir_arr & not_needed_arr)
 for (( i=0; i<$len; i++ )); do
 	for (( j=0; j<$len_not_needed; j++ )); do
 		if [[ "${dir_arr[i]}" == *"${not_needed_arr[j]}"* ]]; then
-			# echo 'a match was found:' "${dir_arr[i]}"
 			unset "dir_arr[i]"																# Delete item from array
-			# elif [[ $str == *".scss"* ]]; then
-			# whatever you want to do when array contains value
 		fi
 	done
 done
 
-for (( i=0; i<$len; i++ )); do												# Remove "config" dir&files from array
-	if [[ "${dir_arr[i]}" == *"config"* ]]; then
-		unset "dir_arr[i]"																# Delete item from array
-	fi
-done
-
-
-for (( i=0; i<$len; i++ )); do
-
-	# For item: remove dot(.) and fwd-slash (\/)
-	# Note how echo does not print
-	str=$(echo "${dir_arr[i]}" | sed "s/.\///")
-	str=$(echo $str | sed "s/_//g") 			# remove _
-
-
-	# Next if empty string or app file
-	# if [[ $str == "application.sass.scss" ]]; then
-  #   continue
-	# elif [[ $str == "" ]]; then
-	# 	continue
-  # fi
-
+# Loop through dir_arr and add imports
+for item in "${dir_arr[@]}"; do
 	# We have 2 groups, .scss files and directory names
-	if [[ $str != *"."* ]]; then
+	if [[ $item != *"."* ]]; then
 
-		# line count of sass file (< removes directory path from str)
+		# line count of sass file (< removes dir path from str)
 		line_count=$(wc -l < $sass_file)
 				
 		# Insert new lines for each directory
-		# If line_count in sass_file is gt 0
-		# (since first line should need a blank line)
+		# (skip first row 0)
 		if [ $line_count -gt 0 ]; then
 			new_line='
 			'
-			echo $nl >> $sass_file
+			echo $new_line >> $sass_file
 		fi
 
 		# Insert directory as comment
-		echo "// $str" >> $sass_file
+		echo "// $item" >> $sass_file
 
-	elif [[ $str == *".scss"* ]]; then
+	elif [[ $item == *".scss"* ]]; then
 
 		# Cut file extension, keep name
-		edit=$(echo $str | grep -o "^[^\.]*")
+		edit=$(echo $item | grep -o "^[^\.]*")
 		
-		# Final string
+		# Insert import
 		echo "@import \"$edit\";" >> $sass_file
 	fi
 done
-
