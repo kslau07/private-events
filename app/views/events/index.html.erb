@@ -1,16 +1,36 @@
-<div class="full">
+<div class="events">
 	<div class="announcement">
-		<span>"New features added this week!"</span>
+		<span class="announcement__body">"New features added this week!"</span>
 	</div>
 
 	<header class="navbar">
-		<h1 class="navbar-title">Private events</h1>
+		<div class="brand">
+			<div class="brand__logo">
+				<%= image_tag "spy.svg",  { class: 'navbar__logo', alt: 'A logo of a spy.', size: "50" }%>
+			</div>
+			<div class="brand__text">
+				<h1 class="navbar__brand">private events</h1>
+			</div>
+		</div>
+		<div class="links">
+			<%= link_to "all events", '' %>
+			<%= link_to "my events", '' %>
+
+			<%= link_to "sign up", '' %>
+			<%= link_to "log in", '' %>
+		</div>
+		<!--			
+		<%= link_to  "Sign in", new_user_session_path %><br>
+		<%= link_to 'Log out', destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
+		-->
 	</header>
 	
-	<main class="container main">
-		<%= link_to  "Sign in", new_user_session_path %>
-		<br>
-		<%= link_to 'Log out', destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
+	<main class="content container">
+		announcement<br>
+		navbar<br>
+		main container<br>
+		footer<br>
+
 
 	</main>
 	

@@ -3,5 +3,8 @@
 	display: flex;
 	justify-content: center;
 	background-color: var(--color-three);
-	
+	&__body {
+		color: var(--color-text-announcement);
+		// color: white;
+	}
 }

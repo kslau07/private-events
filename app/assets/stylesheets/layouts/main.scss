@@ -1,14 +1,19 @@
-.full {
+.events {
 	display: grid;
 	grid-template-areas: 
 	"announcement"
 	"navbar"
-	"main"
+	"content"
 	"footer";
 	grid-template-rows:	25px 100px 1fr;
   height: 100%;
+	
 }
 
-.main {
-	grid-area: main;
+.content {
+	grid-area: content;
+}
+
+.footer {
+	grid-area: footer;
 }

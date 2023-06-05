@@ -2,7 +2,6 @@
 	// Fonts
   // --font-family-sans: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-family-navbar-brand: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
 	--font-family-sans: Helvetica, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 	// Line Heights
@@ -32,6 +31,9 @@
   --font-size-xxxxl: 2.5rem; // 40px
 
   // Text Colors
+	
+	--color-text-announcement:		hsl(40, 27%, 98%);
+
   //--color-text-header: hsl(0, 1%, 16%);
   //--color-text-body:   hsl(0, 5%, 25%);
   //--color-text-muted:  hsl(0, 1%, 44%);

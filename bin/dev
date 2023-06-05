@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+# Generate imports
+app/assets/stylesheets/generate_sass_imports.sh
+
 if ! gem list foreman -i --silent; then
   echo "Installing foreman..."
   gem install foreman
