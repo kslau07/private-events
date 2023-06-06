@@ -1,9 +1,6 @@
 .events {
   height: 100%;
-	// width: 100%;
-
-	// width: 75%;
-	// width: 95%;
+	
 	display: grid;
 	// justify-content: center;
 	grid-template-areas: 
@@ -17,6 +14,7 @@
 
 .content {
 	grid-area: content;
+	
 }
 
 .footer {

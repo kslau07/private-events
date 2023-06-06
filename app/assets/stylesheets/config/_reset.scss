@@ -1,5 +1,9 @@
 // SCSS + BEM system was adapted from https://www.hotrails.dev/
 
+* {
+  outline: 2px dotted var(--color-outline);                 // delete me
+}
+
 *,
 *::before,
 *::after {

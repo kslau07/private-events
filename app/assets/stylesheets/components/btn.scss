@@ -1,0 +1,32 @@
+.btn {
+  display: inline-block;
+  padding: var(--space-xxs) var(--space-m);
+  border-radius: var(--border-radius);
+  background-origin: border-box; // Invisible borders with linear gradients
+  background-color: transparent;
+  border: solid 2px transparent;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter 400ms, color 200ms;
+
+  &:hover,
+  &:focus,
+  &:focus-within,
+  &:active {
+    transition: filter 250ms, color 200ms;
+  }
+
+  &--primary {
+    color: var(--color-white);
+    background-image: linear-gradient(to right, var(--color-one), var(--color-one-rotate));
+
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+      color: var(--color-white);
+      filter: saturate(1.4) brightness(115%);
+    }
+  }
+}

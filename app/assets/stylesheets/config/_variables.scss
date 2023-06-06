@@ -31,28 +31,19 @@
   --font-size-xxxxl: 2.5rem; // 40px
 
   // Text Colors
+	--color-white:				hsl(30, 10%, 98%);
+	--color-off-white:		hsl(40, 27%, 98%);
 	
-	--color-text-announcement:		hsl(40, 27%, 98%);
+	// Outline
+	// --color-outline: gray;						// delete me
 
-  //--color-text-header: hsl(0, 1%, 16%);
-  //--color-text-body:   hsl(0, 5%, 25%);
-  //--color-text-muted:  hsl(0, 1%, 44%);
-	
 	// App Colors
-	--color-one:			 hsl(199, 64%, 73%);
-	--color-two:			 hsl(192, 70%, 43%);
-	--color-three:		 hsl(200, 95%, 14%);
-	--color-four:			 hsl(43, 100%, 51%);
-	--color-five:			 hsl(32, 100%, 49%);
-
-	// --color-primary:          hsl(350, 67%, 50%);
-	// --color-primary:          hsl(350, 67%, 50%);
-	//--color-primary-rotate:   hsl(10, 73%, 54%);
-	//--color-primary-bg:       hsl(0, 85%, 96%);
-	//--color-secondary:        hsl(101, 45%, 56%);
-	//--color-secondary-rotate: hsl(120, 45%, 56%);
-	//--color-tertiary:         hsl(49, 89%, 64%);
-	//--color-glint:            hsl(210, 100%, 82%);
+	--color-one:			 				hsl(199, 64%, 73%);
+	--color-one-rotate: 			hsl(180, 70%, 77%);
+	--color-two:							 hsl(192, 70%, 43%);
+	--color-three:					 hsl(200, 95%, 14%);
+	--color-four:			 			hsl(43, 100%, 51%);
+	--color-five:			 			hsl(32, 100%, 49%);
 
 	// Neutral colors
 	--color-background: hsl(30, 50%, 98%);
@@ -61,7 +52,7 @@
 	//--color-dark:       var(--color-text-header);
 
 	// Border radius
-	//--border-radius: 0.375rem;
+	--border-radius: 0.375rem;
 
 	// Border
 	//--border: solid 2px var(--color-light);
