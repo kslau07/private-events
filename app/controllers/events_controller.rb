@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!, except: :index
 
   def new
     @current_user = User.find(current_user.id)
