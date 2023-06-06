@@ -2,18 +2,19 @@
 @import 'config/variables';
 @import 'config/reset';
 
-// mixins
-@import "mixins/mixins";
-
 // layouts
 @import "layouts/main";
+@import "layouts/header";
 
 // components
-@import "components/announcement";
-@import "components/navbar";
-@import "components/company-name";
+@import "components/brand";
 @import "components/link";
 @import "components/links";
-@import "components/container";
+@import "components/announcement";
 @import "components/footer";
-@import "components/brand";
+@import "components/company-name";
+@import "components/navbar";
+@import "components/container";
+
+// mixins
+@import "mixins/mixins";

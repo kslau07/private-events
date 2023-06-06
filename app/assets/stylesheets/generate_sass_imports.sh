@@ -68,7 +68,7 @@ multi_string="// config
 echo "$multi_string" >> $sass_file				# Use "" to keep new lines
 
 # List of items to remove from dir_arr
-not_needed_arr=("config" "sass")
+not_needed_arr=("config" "sass.scss")
 len_not_needed=${#not_needed_arr[*]}
 
 # Remove unwanted items from dir_arr

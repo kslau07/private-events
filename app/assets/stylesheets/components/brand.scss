@@ -1,13 +1,11 @@
 .brand {
 	display: flex;
 	align-items: center;
-	background-color: red;				// delete me
 	
 	&__logo {
-		background-color: green;
+		// background-color: green;
 	}
 	&__text {
-		background-color: gray;
 		font-size: 20rem;
 		min-width: max-content;
 	}

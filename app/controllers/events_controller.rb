@@ -1,22 +1,28 @@
 class EventsController < ApplicationController
   # before_action :authenticate_user!
 
-  # bar = foo.build_bar  # (has_one or belongs_to)
-  # bar = foo.bars.build # (has_many, habtm or has_many :through)
   def new
-    @event = Event.new
+    @current_user = User.find(current_user.id)
+    @event = @current_user.build_event
+
+    # @event = Event.new
   end
 
   def create
-    @user = User.find(current_user.id)
-    
-    # We need the user object here, not use the id
-    @event = @user.build_event(event_params)
-    redirect_to event_path(@event)
+    @current_user = User.find(current_user.id)
+    # @current_user = current_user                      # convenience method
+    @event = @current_user.create_event(event_params)
+
+    if @event.save
+      redirect_to events_path, notice: 'Your event was created sucessfully!'
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
+
   def event_params
-    params.require(:event).permit(:description, :event_date)
+    params.require(:event).permit(:event_date, :description)
   end
 end

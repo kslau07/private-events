@@ -1,12 +1,17 @@
 .events {
+  height: 100%;
+	// width: 100%;
+
+	// width: 75%;
+	// width: 95%;
 	display: grid;
+	// justify-content: center;
 	grid-template-areas: 
 	"announcement"
 	"navbar"
 	"content"
 	"footer";
 	grid-template-rows:	25px 100px 1fr;
-  height: 100%;
 	
 }
 
