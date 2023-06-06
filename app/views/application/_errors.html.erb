@@ -1,4 +1,5 @@
-<% @post.errors.full_messages.each do |msg| %>
-	<div style="font-size:2rem; color: orangered;">Improve this "errors" partial!!</div>
-	<div style='color: red;'><%= msg %></div>
+<% if activerecord_object.errors.any? %>
+	<div class="error-message">
+		<%= activerecord_object.errors.full_messages.to_sentence.capitalize %>
+	</div>
 <% end %>

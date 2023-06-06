@@ -31,8 +31,9 @@
   --font-size-xxxxl: 2.5rem; // 40px
 
   // Text Colors
-	--color-white:				hsl(30, 10%, 98%);
-	--color-off-white:		hsl(40, 27%, 98%);
+	--color-text-white:				hsl(30, 10%, 98%);
+	--color-text-off-white:		hsl(40, 27%, 98%);
+	--color-text-black:		hsl(240, 2%, 12%);
 	
 	// Outline
 	// --color-outline: gray;						// delete me
@@ -44,10 +45,11 @@
 	--color-three:					 hsl(200, 95%, 14%);
 	--color-four:			 			hsl(43, 100%, 51%);
 	--color-five:			 			hsl(32, 100%, 49%);
+	--color-five-bg:			 			hsl(22, 85%, 96%);
 
 	// Neutral colors
 	--color-background: hsl(30, 50%, 98%);
-	//--color-white:      hsl(0, 0%, 100%);
+	//--color-text-white:      hsl(0, 0%, 100%);
 	//--color-light:      hsl(0, 6%, 93%);
 	//--color-dark:       var(--color-text-header);
 

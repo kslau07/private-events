@@ -1,21 +1,15 @@
-<%= form_with model: event do |form| %>
-	<div>
-		<%= form.label :event_date %>
-		<%= form.text_field :event_date %>
-		<% event.errors.full_messages_for(:event_date).each do |message| %>
-			<div><%= message %></div>
-		<% end %>
-	</div>
+<%= form_with model: @event, url: events_path, method: :post do |form| %>
+	<%= render partial: "errors", locals: { activerecord_object: @event } %>
 
-	<div>
-		<%= form.label :description %><br>
-		<%= form.text_field :description %><br>
-		<% event.errors.full_messages_for(:description).each do |message| %>
-			<div><%= message %></div>
-		<% end %>
-	</div>
+	<%= form.label :date, "Date:" %>
+	<%= form.date_field :date %>
 
-	<div>
-		<%= form.submit %>
-	</div>
+	<%= form.label :description, "Description:" %>
+	<%= form.text_field :description,
+											placeholder: 'One to remember.',
+											input_html: { autofocus: true } %>
+
+
+	<%= link_to "Cancel", "", class: "btn btn--primary" %>
+	<%= form.submit class: "btn btn--primary" %>
 <% end %>

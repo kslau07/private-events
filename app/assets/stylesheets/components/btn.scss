@@ -18,14 +18,14 @@
   }
 
   &--primary {
-    color: var(--color-white);
+    color: var(--color-text-white);
     background-image: linear-gradient(to right, var(--color-one), var(--color-one-rotate));
 
     &:hover,
     &:focus,
     &:focus-within,
     &:active {
-      color: var(--color-white);
+      color: var(--color-text-white);
       filter: saturate(1.4) brightness(115%);
     }
   }
