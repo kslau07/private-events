@@ -1,0 +1,30 @@
+	<%= form_with model: @event, url: events_path, method: :post do |form| %>
+		<%= form.label :date, "Date:" %>
+		<%= form.date_field :date %>
+
+		<%= form.label :description, "Description:" %>
+		<%= form.text_field :description,
+												placeholder: 'One to remember.',
+												input_html: { autofocus: true } %>
+
+		<%# render "errors" %>								<%# Extract errors after it works %>
+		<% if @event.errors.any? %>
+			<div class="error-message">
+				<%= @event.errors.full_messages.to_sentence.capitalize %>
+			</div>
+		<% end %>
+
+		<% @event.errors.full_messages_for(:body).each do |message| %>
+			<div><%= message %></div>
+		<% end %>
+
+
+		<%= link_to "Cancel", "", class: "btn btn--primary" %>
+		<%= form.submit class: "btn btn--primary" %>
+
+		<%# delete me %>
+		<div>
+		<h2><%= @event.errors.full_messages.size %></h2>
+		<h2>delete me</h2>
+		</div>
+	<% end %>
