@@ -1,0 +1,22 @@
+.form {
+	&__field {																// includes label + input
+		display: flex;
+		align-items: center;
+		gap: var(--space-xs);
+		//outline: 1px dashed green;            // delete me
+		
+		&--split {															// Splits flex items left/right align
+			margin-right: auto;
+		}
+
+		&--grow {
+			flex-grow: 1;
+		}
+	}
+	
+	&__text-field{
+		&--grow {
+			flex-grow: 1;
+		}
+	}
+}

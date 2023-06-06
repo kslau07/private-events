@@ -1,15 +1,22 @@
-<%= form_with model: @event, url: events_path, method: :post do |form| %>
+<%= form_with model: @event, class: "event form", url: events_path, method: :post do |form| %>
 	<%= render partial: "errors", locals: { activerecord_object: @event } %>
 
-	<%= form.label :date, "Date:" %>
-	<%= form.date_field :date %>
+	<div class="form__field">
+		<%= form.label :date, "Date:" %>
+		<%= form.date_field :date %>
+	</div>
+	
+	<div class="form__field form__field--split form__field--grow">
+		<%= form.label :description, "Description:" %>
+		<%= form.text_field :description,
+												class: "form__text-field form__text-field--grow",
+												placeholder: 'The coolest event ever.',
+												input_html: { autofocus: true } %>
+	</div>
 
-	<%= form.label :description, "Description:" %>
-	<%= form.text_field :description,
-											placeholder: 'One to remember.',
-											input_html: { autofocus: true } %>
 
-
-	<%= link_to "Cancel", "", class: "btn btn--primary" %>
-	<%= form.submit class: "btn btn--primary" %>
+	<div class="event__actions">
+		<%= link_to "Cancel", "", class: "btn btn--primary" %>
+		<%= form.submit class: "btn btn--primary" %>
+	</div>
 <% end %>
