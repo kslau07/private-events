@@ -1,8 +1,7 @@
 .header {
-	// background-color: lightgreen;
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-s);
   justify-content: space-between;
-  padding: var(--space-m) var(--space-xxxxl);
+  padding: var(--space-l) var(--space-xs);
 }

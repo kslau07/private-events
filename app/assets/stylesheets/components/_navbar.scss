@@ -1,8 +1,11 @@
 .navbar {
 	grid-area: navbar;
 	display: flex;
-	gap: 1rem;								// delete me
+	// gap: var(--space-xxs);
 	align-items: center;
 	// background-color: var(--color-one);
-	padding: 1rem 2rem;
+	// padding: 1rem 2rem;
+	padding-left: var(--space-xl);
+	padding-right: var(--space-xl);
+	padding-top: var(--space-xxxs);
 }

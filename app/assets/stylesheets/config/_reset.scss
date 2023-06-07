@@ -7,7 +7,7 @@
 }
 
 * {
-  margin: 0;                                    // do not use next time
+  margin: 0;
   padding: 0;
 }
 
@@ -48,24 +48,23 @@ h3,
 h4,
 h5,
 h6 {
-  // color: var(--color-text-header);
   line-height: var(--line-height-headers);
 }
 
 h1 {
-  font-size: var(--font-size-xxxl);
+  font-size: var(--font-size-xxxxl);
 }
 
 h2 {
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-xxxl);
 }
 
 h3 {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-xxl);
 }
 
 h4 {
-  font-size: var(--font-size-l);
+  font-size: var(--font-size-xl);
 }
 
 a {

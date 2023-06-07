@@ -4,11 +4,13 @@
 	
 	&__logo {
 		// background-color: green;
+		padding-right: var(--space-xxs);
 	}
 	&__text {
 		font-family: var(--font-family-brand);
 		font-size: var(--font-size-xxxxl);
 		letter-spacing: var(--brand-letter-spacing);
 		min-width: max-content;
+		padding-right: var(--space-xxl);
 	}
 }

@@ -1,10 +1,10 @@
 <header class="navbar">
 		<div class="brand">
 			<div class="brand__logo">
-				<%= image_tag "spy.svg",  { class: 'navbar__logo', alt: 'A logo of a spy.', size: "50" }%>
+				<%= image_tag "spy.svg",  { class: 'navbar__logo', alt: 'A logo of a spy.', size: "40" }%>
 			</div>
 			<div class="brand__text">
-				<span>private events</span>
+				<h2>private events</h2>
 			</div>
 		</div>
 		<div class="links">
@@ -19,10 +19,10 @@
 				<% end %>
 			</div>
 			<div class="link">
-				<%= link_to  "Sign up", new_user_registration_path %>
+				<%= link_to  "sign up", new_user_registration_path %>
 			</div>
 			<div class="link">
-				<%= link_to  "Log in", new_user_session_path %>
+				<%= link_to  "log in", new_user_session_path %>
 			</div>
 		</div>
 	</header>

@@ -1,7 +1,7 @@
 .links {
 	display: flex;
 	flex-grow: 1;
-	gap: 2rem;
+	gap: var(--space-s);
 	// width: 50vw;
 
 	&--split {
