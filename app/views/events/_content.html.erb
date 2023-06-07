@@ -3,6 +3,10 @@
 
 	<%= render "event-add-bar" %>
 
-	<%= render partial: "event", collection: @events, spacer_template: "spacer" %>
+	<% if @events.any? %>
+		<%= render partial: "event", collection: @events, spacer_template: "spacer" %>
+	<% else %>
+		<%= render 'empty_list' %>
+	<% end %>
 
 </main>

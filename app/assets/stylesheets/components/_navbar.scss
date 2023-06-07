@@ -1,11 +1,11 @@
 .navbar {
 	grid-area: navbar;
+	// justify-content: center;
 	display: flex;
 	// gap: var(--space-xxs);
 	align-items: center;
 	// background-color: var(--color-one);
-	// padding: 1rem 2rem;
-	padding-left: var(--space-xl);
-	padding-right: var(--space-xl);
+	padding-left: var(--nav-bar-space-clamp);
+	padding-right: var(--nav-bar-space-clamp);
 	padding-top: var(--space-xxxs);
 }

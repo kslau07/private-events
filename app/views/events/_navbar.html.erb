@@ -8,21 +8,15 @@
 			</div>
 		</div>
 		<div class="links">
-			<div class="link link--active">
-				<%= link_to "all events", '' %>
-			</div>
-			<div class="link links--split">
-				<% if current_user %>
-					<%= link_to "my events", user_path(current_user.id) %>
-				<% else %>
-					<span>You are not logged in.</span>
-				<% end %>
-			</div>
-			<div class="link">
-				<%= link_to  "sign up", new_user_registration_path %>
-			</div>
-			<div class="link">
-				<%= link_to  "log in", new_user_session_path %>
-			</div>
+			<%= link_to "all events", new_event_path, class: "link link--active" %>
+			<%= link_to "my events", new_event_path, class: "link links--split" %>
+
+			<% if current_user %>
+				<%= link_to current_user.email, new_event_path, class: "link" %>
+				<%= link_to "sign out", destroy_user_session_path, class: "link", method: :delete, data: { turbo_method: :delete } %>
+			<% else %>
+				<%= link_to "sign up", new_user_registration_path, class: "link" %>
+				<%= link_to "log in", new_user_session_path, class: "link" %>
+			<% end %>
 		</div>
 	</header>

@@ -1,7 +1,7 @@
 <div class="event">
 	<span>
 		<%= event.event_date.strftime('%B') %>
-		<%= ordinal_number event.event_date.strftime('%-e') %>
+		<%= event.event_date.strftime('%-e').to_i.ordinalize %>
 		<%= event.event_date.strftime('%A') %>
 	</span>
 	<span><%= event.description %></span>

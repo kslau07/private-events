@@ -33,6 +33,9 @@
 	--space-xxxl: 3rem;    // 48px
 	--space-xxxxl: 4rem;   // 64px
 
+	// Responsive Spacing
+	--nav-bar-space-clamp: clamp(1rem, 5vw - 2rem, 5rem);
+
   // Text Colors
 	--color-text-white:				hsl(30, 10%, 98%);
 	--color-text-off-white:		hsl(40, 27%, 98%);
@@ -46,11 +49,13 @@
 	// App Colors
 	--color-one:			 				hsl(199, 64%, 73%);
 	--color-one-rotate: 			hsl(180, 70%, 77%);
-	--color-two:							 hsl(192, 70%, 43%);
-	--color-three:					 hsl(200, 95%, 14%);
-	--color-four:			 			hsl(43, 100%, 51%);
-	--color-five:			 			hsl(32, 100%, 49%);
-	--color-five-bg:			 			hsl(22, 85%, 96%);
+	--color-two:							hsl(192, 70%, 43%);
+	--color-two-rotate: 			hsl(173, 76%, 49%);
+	--color-three:					  hsl(200, 95%, 14%);
+	--color-three-rotate: 	 hsl(181, 100%, 18%);
+	--color-four:			 			  hsl(43, 100%, 51%);
+	--color-five:			 			  hsl(32, 100%, 49%);
+	--color-five-bg:			 	   hsl(22, 85%, 96%);
 
 	// Neutral colors
 	--color-bg-white: hsl(0, 0%, 100%);
