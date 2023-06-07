@@ -3,10 +3,15 @@
 
 	<%= render "event-add-bar" %>
 
+	<%= render(partial: 'event', collection: @events, spacer_template: "spacer") || render(partial: 'empty_list') %>
+
+	<!-- delete me
 	<% if @events.any? %>
 		<%= render partial: "event", collection: @events, spacer_template: "spacer" %>
 	<% else %>
 		<%= render 'empty_list' %>
-	<% end %>
+	<% end %>		
+	-->
+
 
 </main>

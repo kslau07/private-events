@@ -1,6 +1,22 @@
+
+
+<main class="container">
+  <%= link_to sanitize("&larr; Back to events"), events_path %>
+
+	<div class="header">
+		<h1>my events</h1>
+	</div>
+	
+	<%= render(partial: 'events/event', collection: @user.events, spacer_template: "events/spacer") || render(partial: 'events/empty_list') %>
+</main>
+
+
+<!-- delete me
 <%= @user.email %>
 <% @user.events.each do |event| %>
 	<div>
 		<%= event.event_date %>
 	</div>
 <% end %>
+
+-->
