@@ -1,9 +1,5 @@
 // SCSS + BEM system was adapted from https://www.hotrails.dev/
 
-* {
-  outline: 2px dotted var(--color-outline);                 // delete me
-}
-
 *,
 *::before,
 *::after {
@@ -11,7 +7,7 @@
 }
 
 * {
-  margin: 0;
+  margin: 0;                                    // do not use next time
   padding: 0;
 }
 

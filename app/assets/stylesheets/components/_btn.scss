@@ -29,4 +29,9 @@
       filter: saturate(1.4) brightness(115%);
     }
   }
+
+  &--wide {
+    padding-left: var(--space-l);
+    padding-right: var(--space-l);
+  }
 }

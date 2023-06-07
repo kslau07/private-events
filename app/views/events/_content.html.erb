@@ -2,7 +2,7 @@
 <main class="content container">
 
 	<%= render "event-add-bar" %>
-		
-	<%# render @events %>
+
+	<%= render partial: "event", collection: @events, spacer_template: "spacer" %>
 
 </main>

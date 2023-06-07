@@ -2,13 +2,15 @@
 	display: flex;
 	// justify-content: space-between;
 	flex-direction: row;
+	// justify-content: space-around;
 	align-items: center;
 	gap: var(--space-xl);
-
 	background-color: var(--color-bg-white);
 	border-radius: var(--border-radius);
   box-shadow: var(--shadow-small);
-	padding: var(--space-xs);
+	padding: var(--space-xs) var(--space-l);
+	font-size: var(--font-size-l);
+	
 
 	&__actions {
 		// outline: 5px solid green;

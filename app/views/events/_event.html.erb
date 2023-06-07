@@ -1,1 +1,10 @@
-events go here
+<div class="event">
+	<span>
+		<%= event.event_date.strftime('%B') %>
+		<%= ordinal_number event.event_date.strftime('%-e') %>
+		<%= event.event_date.strftime('%A') %>
+	</span>
+	<span><%= event.description %></span>
+	<span><%= event.creator.email %></span>
+	<span style="font-size:0.8rem;">format me</span>
+</div>
