@@ -1,5 +1,5 @@
-<% if activerecord_object.errors.any? %>
+<% activerecord_object.errors.full_messages.each do |message| %>
 	<div class="error-message">
-		<%= activerecord_object.errors.full_messages.to_sentence.capitalize %>
+		<%= message %>
 	</div>
 <% end %>

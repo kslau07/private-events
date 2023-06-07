@@ -3,23 +3,22 @@
 @import 'config/reset';
 
 // layouts
-@import "layouts/main";
-@import "layouts/devise";
-@import "layouts/header";
+@import "layouts/_devise";
+@import "layouts/_header";
+@import "layouts/_main";
 
 // components
-@import "components/error-message";
-@import "components/brand";
-@import "components/link";
-@import "components/links";
-@import "components/announcement";
-@import "components/footer";
-@import "components/company-name";
-@import "components/event";
-@import "components/navbar";
-@import "components/form";
-@import "components/container";
-@import "components/btn";
+@import "components/_event";
+@import "components/_error-message";
+@import "components/_footer";
+@import "components/_form";
+@import "components/_btn";
+@import "components/_announcement";
+@import "components/_link";
+@import "components/_container";
+@import "components/_brand";
+@import "components/_links";
+@import "components/_navbar";
 
 // mixins
-@import "mixins/mixins";
+@import "mixins/_mixins";

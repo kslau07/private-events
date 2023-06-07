@@ -1,3 +1,5 @@
 .footer {
-	background-color: darkgray; // change me
+	display: flex;
+	justify-content: center;
+	background-color: var(--color-five);
 }

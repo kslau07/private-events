@@ -1,15 +1,15 @@
 <%= form_with model: @event, class: "event form", url: events_path, method: :post do |form| %>
 	<%= render partial: "errors", locals: { activerecord_object: @event } %>
 
-	<div class="form__field">
+	<div class="form__field-group">
 		<%= form.label :date, "Date:" %>
 		<%= form.date_field :date %>
 	</div>
 	
-	<div class="form__field form__field--split form__field--grow">
+	<div class="form__field-group form__field-group--split form__field-group--flex1">
 		<%= form.label :description, "Description:" %>
 		<%= form.text_field :description,
-												class: "form__text-field form__text-field--grow",
+												class: "form__input form__input--flex1",
 												placeholder: 'The coolest event ever.',
 												input_html: { autofocus: true } %>
 	</div>

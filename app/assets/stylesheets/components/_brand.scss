@@ -6,7 +6,9 @@
 		// background-color: green;
 	}
 	&__text {
-		font-size: 20rem;
+		font-family: var(--font-family-brand);
+		font-size: var(--font-size-xxxxl);
+		letter-spacing: var(--brand-letter-spacing);
 		min-width: max-content;
 	}
 }
