@@ -1,9 +1,11 @@
 <main class="container">
-  <%= link_to sanitize("&larr; Back to events"), events_path %>
+	<%= link_to sanitize("&larr; Back to events"),  events_path, class: "container__link-back" %>
 	
 	<div class="header">
-		<h1>New Event</h1>
+		<h2>New Event</h2>
 	</div>
-
-	<%= render "form", event: @event %>
+	
+	<%= turbo_frame_tag "first_turbo_frame" do %>
+		<%= render "form", event: @event %>
+	<% end %>
 </main>

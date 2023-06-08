@@ -1,0 +1,19 @@
+.event-compact {
+	display: flex;
+	background-color: var(--color-bg-white);
+	border-radius: var(--border-radius);
+	min-width: max-content;	
+	font-size: var(--font-size-l);	
+	flex-direction: row;
+	align-items: center;
+	gap: var(--space-xl);
+	padding: var(--space-xs) var(--space-l);
+	box-shadow: var(--shadow-small);
+
+	&__actions {
+		display: flex;
+		flex: 0 0 auto; 				// grow 0, shrink 0, flex-basis auto
+		align-self: flex-start;
+		gap: var(--space-xs);
+	}
+}

@@ -1,6 +1,9 @@
 <div class="header">
-	<h2>events</h2>
-	<%= link_to "add event",
-											new_event_path,
-							class: "btn btn--primary btn--wide" %>
+
+	<%= turbo_frame_tag "first_turbo_frame" do %>
+		<h2>upcoming events</h2>
+		<%= link_to "add event",
+												new_event_path,
+								class: "btn btn--primary btn--wide" %>
+	<% end %>
 </div>

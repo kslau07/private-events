@@ -1,22 +1,9 @@
-
-
 <main class="container">
-  <%= link_to sanitize("&larr; Back to events"), events_path %>
+	<%= link_to sanitize("&larr; Back to events"),  events_path, class: "container__link-back" %>
 
 	<div class="header">
-		<h1>my events</h1>
+		<h2>my events</h2>
 	</div>
 	
 	<%= render(partial: 'events/event', collection: @user.events, spacer_template: "events/spacer") || render(partial: 'events/empty_list') %>
 </main>
-
-
-<!-- delete me
-<%= @user.email %>
-<% @user.events.each do |event| %>
-	<div>
-		<%= event.event_date %>
-	</div>
-<% end %>
-
--->

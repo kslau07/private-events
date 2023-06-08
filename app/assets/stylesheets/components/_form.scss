@@ -3,11 +3,10 @@
 	flex-wrap: wrap;
   gap: var(--space-xs);
 
-	&__field-group {																// includes label + input
+	&__field-couple {																// includes label + input
 		display: flex;
 		align-items: center;
 		gap: var(--space-xs);
-		// width: 100%;
 		
 		&--split {															// Splits flex items left/right align
 			margin-right: auto;
@@ -17,13 +16,13 @@
 			flex: 1;
 		}
 	}
-	
+
 	&__input {
 		padding: var(--space-xxs) var(--space-xs);
 		border: var(--border);
 		border-radius: var(--border-radius);
 		outline: none;
-		transition: box-shadow 250ms;												// Affects :focus
+		transition: box-shadow 250ms; // affects :focus pseudo-class
 
     &:focus {
       box-shadow: 0 0 0 2px var(--color-one-rotate);

@@ -1,10 +1,10 @@
-<div class="event">
+<a href="<%= event_path(event.id) %>" class="event-compact">
 	<span>
 		<%= event.event_date.strftime('%B') %>
-		<%= event.event_date.strftime('%-e').to_i.ordinalize %>
+		<%= event.event_date.strftime('%-e').to_i.ordinalize %>,
 		<%= event.event_date.strftime('%A') %>
 	</span>
 	<span><%= event.description %></span>
 	<span><%= event.creator.email %></span>
 	<span style="font-size:0.8rem;">format me</span>
-</div>
+</a>
