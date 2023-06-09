@@ -1,10 +1,20 @@
-<a href="<%= event_path(event.id) %>" class="event-compact">
-	<span>
-		<%= event.event_date.strftime('%B') %>
-		<%= event.event_date.strftime('%-e').to_i.ordinalize %>,
-		<%= event.event_date.strftime('%A') %>
-	</span>
-	<span><%= event.description %></span>
-	<span><%= event.creator.email %></span>
-	<span style="font-size:0.8rem;">format me</span>
-</a>
+<%= turbo_frame_tag event do %>						<!-- turbo_frame for destroy and edit -->
+	<div class="event-compact">
+		<a href="<%= event_path(event.id) %>">
+		<span>
+			<%= event.event_date.strftime('%B') %>
+			<%= event.event_date.strftime('%-e').to_i.ordinalize %>,
+			<%= event.event_date.strftime('%A') %>
+			
+		</span>
+		<span><%= event.description %></span>
+		<span><%= event.creator.email %></span>
+		<!--span style="font-size:0.5rem;">Created@<%= event.created_at.strftime('%I:%M:%S')%></span-->
+		<span style="font-size:0.5rem;">Created on <%= event.created_at%></span>
+		</a>
+
+		<%#= button_to "Delete", event_path(event), method: :delete, class: "btn btn--secondary" %>
+		<%= button_to "Delete", event_path(event), method: :delete %>
+
+	</div>
+<% end %>

@@ -10,21 +10,34 @@ class EventsController < ApplicationController
   end
 
   def new
-    @current_user = User.find(current_user.id)
-    @event = @current_user.events.build
+    @event = Event.new                # For turbo-frames
 
-    # @event = Event.new
+    #@current_user = User.find(current_user.id)
+    #@event = @current_user.events.build
   end
 
   def create
-    @current_user = User.find(current_user.id)
-    # @current_user = current_user                      # convenience method
+    @current_user = User.find(current_user.id)          # or just = current_user
     @event = @current_user.events.create(event_params)
 
     if @event.save
-      redirect_to events_path, notice: 'Your event was created sucessfully!'
+      # redirect_to events_path, notice: 'Your event was created sucessfully!'
+      respond_to do |format|
+        format.html { redirect_to events_path, notice: 'Your event was created sucessfully!' }
+        format.turbo_stream
+      end
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @event = Event.destroy(params[:id])
+    # @event.destroy
+
+    respond_to do |format|
+      format.html { redirect_to events_path, notice: 'Event was successfully removed.' }
+      format.turbo_stream
     end
   end
 
