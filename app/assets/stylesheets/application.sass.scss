@@ -2,26 +2,26 @@
 @import 'config/variables';
 @import 'config/reset';
 
+// mixins
+@import "mixins/_mixins";
+
 // layouts
-@import "layouts/_devise";
 @import "layouts/_header";
+@import "layouts/_devise";
 @import "layouts/_main";
 
 // components
-@import "components/_empty-list";
-@import "components/_event-compact";
-@import "components/_error-message";
-@import "components/_footer";
-@import "components/_form";
-@import "components/_btn";
 @import "components/_announcement";
+@import "components/_btn";
+@import "components/_brand";
+@import "components/_svg";
+@import "components/_form";
+@import "components/_event-compact";
+@import "components/_footer";
+@import "components/_error-message";
+@import "components/_event-full";
+@import "components/_links";
+@import "components/_empty-list";
 @import "components/_link";
 @import "components/_container";
-@import "components/_brand";
-@import "components/_event-full";
-@import "components/_svg";
-@import "components/_links";
 @import "components/_navbar";
-
-// mixins
-@import "mixins/_mixins";

@@ -3,13 +3,24 @@
 	background-color: var(--color-bg-white);
 	border-radius: var(--border-radius);
 	// min-width: max-content;
-	width: var(--fixed-width);
+	// width: var(--fixed-width);
 	font-size: var(--font-size-l);	
 	flex-direction: row;
 	align-items: center;
 	gap: var(--space-xl);
 	padding: var(--space-xs) var(--space-l);
 	box-shadow: var(--shadow-small);
+
+	&__description {
+		display: inline-block;											// Do not remove
+		align-self: center;
+		outline: 3px dashed orangered;            // delete me
+		white-space: nowrap; 
+		width: 100px; 
+		overflow: hidden;
+		text-overflow: ellipsis; 
+	
+	}
 
 	&__actions {
 		display: flex;

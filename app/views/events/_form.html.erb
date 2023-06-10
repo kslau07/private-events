@@ -13,13 +13,13 @@
 												class: "form__input form__input--flex1",
 												placeholder: 'The coolest event ever.',
 												input_html: { autofocus: true } %>
-	</div>
+	</div> 
 
 	<div class="event__actions">
 		<%= link_to "cancel", events_path, class: "btn btn--primary" %>
 		<% if action_name == 'new' %>
 			<%= form.submit "create event", class: "btn btn--primary" %>
-		<% elsif action_name == 'edit' %>
+		<% else action_name == 'edit' || action_name == 'create' %>
 			<%= form.submit "update event", class: "btn btn--primary" %>
 		<% end %>
 	</div>
