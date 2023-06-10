@@ -2,9 +2,17 @@
 	<h2>upcoming events</h2>
 	
 	<%= turbo_frame_tag 'unused_turbo_frame' do %>
-		<%= link_to "add an event",
-								new_event_path,
-								class: "btn btn--primary btn--wide",
-								data: { turbo_frame: dom_id(Event.new) } %>
+		<% if current_user %>
+			<%= link_to "add an event",
+									new_event_path,
+									class: "btn btn--primary btn--wide",
+									data: { turbo_frame: dom_id(Event.new) } %>
+		<% else %>
+			<%# Redirects to log-in page %>
+			<%= link_to "add an event",
+						new_event_path,
+						class: "btn btn--primary btn--wide",
+						data: { turbo_frame: "_top" } %>			
+		<% end %>
 	<% end %>
 </div>

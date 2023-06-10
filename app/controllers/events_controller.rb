@@ -10,10 +10,10 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = Event.new                # For turbo-frames
+    # @event = Event.new                # Needed for turbo-frames?
 
-    #@current_user = User.find(current_user.id)
-    #@event = @current_user.events.build
+    @current_user = User.find(current_user.id)
+    @event = @current_user.events.build
   end
 
   def create

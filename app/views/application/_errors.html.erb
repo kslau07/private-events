@@ -4,3 +4,8 @@
 	</div>
 <% end %>
 
+<%# unless activerecord_object.nil? %>
+	<!--div class="error-message"-->
+		<%#= activerecord_object.errors.full_messages.to_sentence.capitalize %>
+	<!--/div-->
+<%# end %>

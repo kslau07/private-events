@@ -1,75 +1,56 @@
 .devise {
 	letter-spacing: 0.1rem;
 	height: 100%;
-	// width: 500px;
   display: grid;
 	place-content: center;
 	background-color: var(--color-bg-white);
-}
 
-.devise h2 {
-	// font-size: 6rem;
-	// margin-bottom: 5rem;
-	text-align: center;
-}
+	&__text-input {
+		padding: var(--space-xs);
 
-.devise h2.forgot_pw {
-	// font-size: 3rem
-}
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+			border-radius: var(--border-radius);
+			outline: var(--border);
+    }
+	}		
 
-.devise .field {
-	/* outline: 1px solid gray; */
-	margin-bottom: 2rem 0;
-	/* border: 0; */
-}
+	&__title {
+		text-align: center;
+		padding-bottom: var(--space-xl);
+		max-width: 15rem;
+		line-height: 3rem;
+	}
 
-.devise label {
-	/* display: block; */
-}
+	& input {
+		margin: 0.6rem 0;
+		border: 0;
+		border-bottom: 2px solid gray;
+	}
 
-.devise input {
-	/* outline: 2px solid green; */
-	margin: 0.6rem 0;
-	border: 0;
-	border-bottom: 2px solid gray;
+	&__checkbox {
+		appearance: auto;
+		margin-left: 0.5rem;
+	}
 
-	&:hover,
-  &:focus,
-  &:focus-within,
-  &:active {
-    // transition: filter 250ms, color 200ms;
-		// border: none;
-  }
-}
+	&__checkbox-label {
+		font-size: var(--font-size-xs);
+	}
 
-.devise input[type="email"],
-.devise input[type="password"] {
-	/* padding-left: 3rem; */
-	/* margin-left: 3rem; */
-	padding: 0.5rem;
-}
+	&__remember-couple {
+		padding-top: var(--space-m);
+	}
 
-.devise input[type="checkbox"] {
-	appearance: auto;
-	margin-left: 0.5rem;
-}
+	&__em {
+		font-size: var(--font-size-s);
+		letter-spacing: 0;
+	}
 
-.devise label[for="user_remember_me"] {
-	/* margin-bottom: 6rem; */
-	font-size: 1.5rem;
-}
-
-.devise .field em {
-	/* "x characters minimum" */
-	font-size: 1rem;
-}
-
-.devise .actions {
-	/* button */
-	text-align: center;
-	margin: 3rem 0;
-}
-         
-.devise a {
-	text-decoration: none;
+	&__actions {
+		text-align: center;
+		padding-top: var(--space-l);
+		padding-bottom: var(--space-l);
+	}
 }
