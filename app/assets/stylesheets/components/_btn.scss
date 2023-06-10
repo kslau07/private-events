@@ -30,6 +30,39 @@
     }
   }
 
+  &--secondary {
+    color: var(--color-text-white);
+    background-image: linear-gradient(to right, var(--color-one), var(--color-one-rotate));
+
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+      color: var(--color-text-white);
+      filter: saturate(1.4) brightness(115%);
+    }
+  }
+
+  &--tertiary {
+    color: var(--color-text-white);
+    background-image: linear-gradient(to right, var(--color-five), var(--color-five-rotate));
+
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+      color: var(--color-text-white);
+      filter: saturate(1.4) brightness(115%);
+    }
+  }
+
+  &--short {
+    font-size: var(--font-size-m);
+    color: var(--color-text-off-white);
+    padding-top: var(--space-xxxxs);
+    padding-bottom: var(--space-xxxxs);
+  }
+
   &--wide {
     padding-left: var(--space-l);
     padding-right: var(--space-l);

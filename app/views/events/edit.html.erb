@@ -2,11 +2,10 @@
 <%= link_to sanitize("&larr; Back to events"),  events_path, class: "container__link-back" %>
 
 <div class="header">
-	<h2>New Event</h2>
+	<h2>Edit Event</h2>
 </div>
 
-<%= turbo_frame_tag Event.new do %>
-	<!-- @event is Event.new from controller -->
+<%= turbo_frame_tag @event do %>
 	<%= render "form", event: @event %>
 <% end %>
 </main>

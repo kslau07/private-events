@@ -21,13 +21,33 @@ class EventsController < ApplicationController
     @event = @current_user.events.create(event_params)
 
     if @event.save
-      # redirect_to events_path, notice: 'Your event was created sucessfully!'
       respond_to do |format|
-        format.html { redirect_to events_path, notice: 'Your event was created sucessfully!' }
+        format.html { redirect_to events_path, notice: 'Your event was created successfully!' }
         format.turbo_stream
       end
+
+      # redirect_to events_path, notice: 'Your event was created successfully!'
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+
+    if @event.update(event_params)
+      respond_to do |format|
+        format.html { redirect_to events_path, notice: 'Your event was updated successfully!' }
+        format.turbo_stream
+      end
+
+      # redirect_to events_path, notice: 'Your event was updated!'
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
