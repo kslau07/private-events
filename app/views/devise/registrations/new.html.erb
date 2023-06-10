@@ -1,25 +1,26 @@
 <div class="devise">
+
   <h1 class="devise__title">sign up</h1>
   
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
   
-    <div class="field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email",  class: "devise__text-input" %><br>
-      <%= f.label :email %>
+    <div class="devise__field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",  class: "devise__text-input" %>
+      <%= f.label :email, class: "devise__label" %>
     </div>
   
-    <div class="field">
-      <%= f.password_field :password, autocomplete: "new-password", class: "devise__text-input" %><br>
-      <%= f.label :password %>
+    <div class="devise__field">
+      <%= f.password_field :password, autocomplete: "new-password", class: "devise__text-input" %>
+      <%= f.label :password, class: "devise__label" %>
       <% if @minimum_password_length %>
-      <em class="devise__em">(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
+        <em class="devise__pw-constraint devise__label">(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %>
     </div>
   
-    <div class="field">
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "devise__text-input" %><br>
-      <%= f.label :password_confirmation %>
+    <div class="devise__field">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "devise__text-input" %>
+      <%= f.label :password_confirmation, class: "devise__label" %>
     </div>
   
     <div class="devise__actions">

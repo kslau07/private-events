@@ -1,3 +1,5 @@
+
+
 .devise {
 	letter-spacing: 0.1rem;
 	height: 100%;
@@ -5,8 +7,21 @@
 	place-content: center;
 	background-color: var(--color-bg-white);
 
+	&__field {
+		display: flex;
+		flex-direction: column;
+		padding-bottom: var(--space-m);
+	}
+
+	&__label {
+		align-self: flex-end;
+		justify-content: flex-end;
+	}
+
 	&__text-input {
 		padding: var(--space-xs);
+		border: 0;
+		border-bottom: 2px solid gray;
 
     &:hover,
     &:focus,
@@ -24,12 +39,6 @@
 		line-height: 3rem;
 	}
 
-	& input {
-		margin: 0.6rem 0;
-		border: 0;
-		border-bottom: 2px solid gray;
-	}
-
 	&__checkbox {
 		appearance: auto;
 		margin-left: 0.5rem;
@@ -43,7 +52,7 @@
 		padding-top: var(--space-m);
 	}
 
-	&__em {
+	&__pw-constraint {
 		font-size: var(--font-size-s);
 		letter-spacing: 0;
 	}

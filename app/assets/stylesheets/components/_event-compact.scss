@@ -1,5 +1,6 @@
 .event-compact {
 	display: flex;
+	justify-content: space-between;
 	background-color: var(--color-bg-white);
 	border-radius: var(--border-radius);
 	// min-width: max-content;
@@ -11,21 +12,38 @@
 	padding: var(--space-xs) var(--space-l);
 	box-shadow: var(--shadow-small);
 
+	&__date {
+		display: inline-block;
+		font-size: var(--font-size-xs);
+		width: 5rem;
+	}
+
 	&__description {
 		display: inline-block;											// Do not remove
-		align-self: center;
-		outline: 3px dashed orangered;            // delete me
+		width: 25rem;
+		flex: 1 1 0;
 		white-space: nowrap; 
-		width: 100px; 
 		overflow: hidden;
 		text-overflow: ellipsis; 
-	
+		vertical-align: bottom;
+	}
+
+	&__creator {
+		// display: inline-block;
+		font-size: var(--font-size-xs);
 	}
 
 	&__actions {
 		display: flex;
-		flex: 0 0 auto; 				// grow 0, shrink 0, flex-basis auto
-		align-self: flex-start;
 		gap: var(--space-xs);
+		
+		// display: flex;
+		// flex: 0 0 auto; 				// grow 0, shrink 0, flex-basis auto
+		// align-self: flex-start;
+		// gap: var(--space-xs);
+		// margin-left: auto;
+		// align-self: flex-end;
+		// justify-self: flex-end;
+
 	}
 }

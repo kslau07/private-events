@@ -3,18 +3,24 @@
 	<div class="event-compact">
 		<!--a href="<%= event_path(event.id) %>"-->
 		<a href="<%= event_path(event.id)%>" data-turbo-frame="_top">
-			<span>
+			
+			<span class="event-compact__date">
 				<%= event.event_date.strftime('%B') %>
 				<%= event.event_date.strftime('%-e').to_i.ordinalize %>,
 				<%= event.event_date.strftime('%A') %>
 			</span>
+			
 			<span class="event-compact__description"><%= event.description %></span>
-			<span><%= event.creator.email %></span>
-			<!--span style="font-size:0.5rem;">Created@<%= event.created_at.strftime('%I:%M:%S')%></span-->
-			<span style="font-size:0.5rem;">Created on <%= event.created_at%></span>
 		</a>
 
-		<%= link_to "Edit", edit_event_path(event), class: "btn btn--secondary btn--short" %>
-		<%= button_to "delete", event_path(event), method: :delete, class: "btn btn--secondary btn--short" %>
+
+		<% if current_user&.id == event.creator_id %>
+			<div class="event-compact__actions">
+				<%= link_to "Edit", edit_event_path(event), class: "btn btn--secondary btn--short" %>
+				<%= button_to "delete", event_path(event), method: :delete, class: "btn btn--secondary btn--short" %>
+			</div>
+		<% else %>
+			<span class="event-compact__creator"><%= event.creator.email %></span>
+		<% end %>
 	</div>
 <% end %>
