@@ -2,7 +2,8 @@
 	display: flex;
 	background-color: var(--color-bg-white);
 	border-radius: var(--border-radius);
-	min-width: max-content;	
+	// min-width: max-content;
+	width: var(--fixed-width);
 	font-size: var(--font-size-l);	
 	flex-direction: row;
 	align-items: center;
