@@ -4,4 +4,12 @@ class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
   respond_to :html
 
+  private
+  def authenticate_user!
+    if user_signed_in?
+      super
+    else
+      redirect_to new_user_registration_path, notice: 'Please sign up to view that page!'
+    end
+  end
 end

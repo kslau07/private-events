@@ -2,8 +2,14 @@
 	grid-area: announcement;
 	display: flex;
 	justify-content: center;
-	background-color: var(--color-two);
-	&__body {
+
+	&--normal {
 		color: var(--color-text-off-white);
+		background-color: var(--color-two);
+	}
+
+	&--flash {
+		color: var(--color-text-off-white);
+		background-color: var(--color-five);
 	}
 }

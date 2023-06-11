@@ -1,0 +1,7 @@
+<% if flash.empty? %>
+  <div class="announcement announcement--normal">New features added this week!</div>
+<% else %>
+  <% flash.each do |type, msg| %>
+    <div class="announcement announcement--flash"><%= msg %></div>
+  <% end %>
+<% end %>
