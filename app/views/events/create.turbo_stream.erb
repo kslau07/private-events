@@ -1,4 +1,5 @@
 <%# prepend to the turbo_frame with dom_id "events" %>
+<%= turbo_stream.prepend "events", partial: "events/spacer" %>
 <%= turbo_stream.prepend "events", partial: "events/event", locals: { event: @event } %>
 
 <%# change the turbo_frame (dom_id "new_event"/Event.new) with empty content (form goes away after record saves) %>

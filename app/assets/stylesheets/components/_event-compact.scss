@@ -19,13 +19,18 @@
 	}
 
 	&__description {
+		// outline: 3px dashed orangered;            // delete me
 		display: inline-block;											// Do not remove
-		width: 25rem;
+		// width: 25rem;
 		flex: 1 1 0;
+		// max-width: min-content;
+		// flex-shrink: 1;
+		// max-width: 15rem;
 		white-space: nowrap; 
 		overflow: hidden;
 		text-overflow: ellipsis; 
 		vertical-align: bottom;
+		text-align: center;
 	}
 
 	&__creator {
