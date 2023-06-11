@@ -5,16 +5,6 @@
 		<h2>Edit Event</h2>
 	</div>
 
-<%
-=begin %>
-delete me
-<%= turbo_frame_tag "test" do %>
-		<%= render "test" %>
-	<% end %>
-
-<%
-=end %>
-
 	<%= turbo_frame_tag @event do %>
 		<%= render "form", event: @event %>
 	<% end %>

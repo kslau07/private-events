@@ -6,10 +6,9 @@
 	max-width: 60rem;
 
 	&__link-back {
-		display: inline-block;
-		color: red;
+		display: inline-block;				// delete me
 		color: var(--color-five);
 		font-size: var(--font-size-l);
-		// padding-bottom: var(--space-m);
+		padding-bottom: var(--space-m);
 	}
 }

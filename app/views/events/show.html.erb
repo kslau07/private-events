@@ -1,17 +1,15 @@
+<%= render "back" %>
 <main class="container">
-	<%= link_to sanitize("&larr; Back to events"),  events_path, class: "container__link-back" %>
-
-	<div class="event-full">
-		<%= image_tag "event.svg", { class: 'class_name', size: "250", alt: 'A picture of a calendar with a checkmark.' }%>
-
-		<div class="event-full__info">
-			<span>
-				<%= @event.event_date.strftime('%B') %>
-				<%= @event.event_date.strftime('%-e').to_i.ordinalize %>,
-				<%= @event.event_date.strftime('%A') %>
-			</span>
-			<h1><%= @event.description %></h1>
-			<span>created by <%= @event.creator.email %></span>
-		</div>
-	</div>
+  <div class="event-full">
+    <%= image_tag "event.svg", { class: 'class_name', size: "250", alt: 'A picture of a calendar with a checkmark.' }%>
+    <div class="event-full__info">
+      <span>
+        <%= @event.event_date.strftime('%B') %>
+        <%= @event.event_date.strftime('%-e').to_i.ordinalize %>,
+        <%= @event.event_date.strftime('%A') %>
+      </span>
+      <h1><%= @event.description %></h1>
+      <span>created by <%= @event.creator.email %></span>
+    </div>
+  </div>
 </main>

@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       super
     else
-      redirect_to new_user_registration_path, notice: 'Please sign up to view that page!'
+      redirect_to new_user_registration_path, notice: 'Please sign up or log in to view that page!'
     end
   end
 end

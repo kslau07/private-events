@@ -1,11 +1,9 @@
 #! /bin/bash
 
-# This script populates application.sass.scss with imports from each directory
+# This script automatically adds imports to application.sass.scss
 
+# To do:
 # Capitalize first letter of directory
-
-# Afterwards: Instead of just overwriting scss file, copy old file to file-previous.sass.scss
-# Add time stamp to old copy
 
 # Order of imports is:
 # config/variables
