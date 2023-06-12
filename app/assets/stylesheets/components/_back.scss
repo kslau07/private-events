@@ -1,6 +1,6 @@
 .back {
-	// display: flex;
-	// justify-content: center;
-	min-width: max-content;
 	padding: var(--space-s);
+	display: inline-block;		
+	color: var(--color-two);
+	font-size: var(--font-size-m);
 }

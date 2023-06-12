@@ -62,11 +62,16 @@ dir_arr=(${array2[@]})
 # Manually add config dir first
 multi_string="// config
 @import 'config/variables';
-@import 'config/reset';"
+@import 'config/reset';
+
+// mixins
+@import 'mixins/mixins';"
+
 echo "$multi_string" >> $sass_file				# Use "" to keep new lines
 
 # List of items to remove from dir_arr
-not_needed_arr=("config" "sass.scss")
+# (eg imports we added manually above, etc.)
+not_needed_arr=("config" "sass.scss" "mixins")
 len_not_needed=${#not_needed_arr[*]}
 
 # Remove unwanted items from dir_arr

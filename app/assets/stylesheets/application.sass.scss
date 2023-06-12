@@ -2,6 +2,9 @@
 @import 'config/variables';
 @import 'config/reset';
 
+// mixins
+@import 'mixins/mixins';
+
 // layouts
 @import "layouts/_devise";
 @import "layouts/_header";
@@ -23,6 +26,3 @@
 @import "components/_svg";
 @import "components/_links";
 @import "components/_navbar";
-
-// mixins
-@import "mixins/_mixins";
