@@ -10,6 +10,12 @@
       </span>
       <h1><%= @event.description %></h1>
       <span>created by <%= @event.creator.email %></span>
+      
+      <%# change/delete me %>
+      <div>attendees:</div>
+      <% @event.attendees.each_with_index do |attendee, i| %>
+        <div><%= "#{i+1}. #{attendee.email}" %></div>
+      <% end %>
     </div>
   </div>
 </main>

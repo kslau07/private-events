@@ -8,6 +8,16 @@ Bundler.require(*Rails.groups)
 
 module PrivateEvents
   class Application < Rails::Application
+
+    config.generators do |g|
+      # g.controller_specs false
+      # g.view_specs = false
+      g.helper = false
+      # g.helper_specs false
+      # g.model_specs false
+      g.test_framework nil
+    end
+
     # Use the responders controller from the responders gem
     config.app_generators.scaffold_controller :responders_controller
 

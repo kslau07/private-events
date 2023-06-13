@@ -8,6 +8,7 @@
         <%= event.event_date.strftime('%A') %>
       </span>
     </a>
+    <div><%= event.id %></div>
     <%= link_to event.description, 
               event_path(event.id), 
               data: { turbo_frame: "_top" },
@@ -18,6 +19,10 @@
         <%= button_to "delete", event_path(event), 
                                 method: :delete, 
                                 class: "btn btn--secondary btn--short" %>
+      </div>
+    <% elsif current_user && current_user&.id != event.creator_id %>
+      <div class="event-compact__actions">
+        <%= link_to "test", "#{events_path}/#{event.id}/add_attendee" %>
       </div>
     <% else %>
       <span class="event-compact__creator"><%= event.creator.email %></span>

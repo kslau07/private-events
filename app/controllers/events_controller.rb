@@ -13,12 +13,13 @@ class EventsController < ApplicationController
     # @event = Event.new                # Needed for turbo-frames?
 
     @current_user = User.find(current_user.id)
-    @event = @current_user.events.build
+    @event = @current_user.created_events.build
   end
 
   def create
-    @current_user = User.find(current_user.id)          # or just = current_user
-    @event = @current_user.events.create(event_params)
+    @current_user = current_user
+
+    @event = @current_user.created_events.create(event_params)
 
     if @event.save
       respond_to do |format|
@@ -53,7 +54,6 @@ class EventsController < ApplicationController
 
   def destroy
     @event = Event.destroy(params[:id])
-    # @event.destroy
 
     respond_to do |format|
       format.html { redirect_to events_path, notice: 'Event was successfully removed.' }
@@ -62,7 +62,7 @@ class EventsController < ApplicationController
   end
 
   private
-  
+
   def event_params
     params.require(:event).permit(:event_date, :description)
   end

@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   respond_to :html
 
   private
+
   def authenticate_user!
     if user_signed_in?
       super
