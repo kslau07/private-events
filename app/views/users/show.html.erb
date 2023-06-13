@@ -1,10 +1,7 @@
 <%= render "back" %>
 <main class="container">
-
-
-	<div class="header">
-		<h2>my events</h2>
-	</div>
-	
-	<%= render(partial: 'events/event', collection: @user.created_events, spacer_template: "events/spacer") || render(partial: 'events/empty_list') %>
+  <div class="header">
+    <h2>my events</h2>
+  </div>
+  <%= render(partial: 'events/event', collection: @user.events, spacer_template: "events/spacer") || render(partial: 'events/empty_list') %>
 </main>

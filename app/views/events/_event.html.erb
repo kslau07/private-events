@@ -20,9 +20,10 @@
                                 method: :delete, 
                                 class: "btn btn--secondary btn--short" %>
       </div>
-    <% elsif current_user && current_user&.id != event.creator_id %>
+    <% elsif current_user && current_user&.id != event.user_id %>
       <div class="event-compact__actions">
-        <%= link_to "test", "#{events_path}/#{event.id}/add_attendee" %>
+        <%# This is a button which sends POST to attendance#create. %>
+        <%= button_to "test", event_attendances_path(event) %>
       </div>
     <% else %>
       <span class="event-compact__creator"><%= event.creator.email %></span>

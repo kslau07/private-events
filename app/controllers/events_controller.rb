@@ -13,13 +13,12 @@ class EventsController < ApplicationController
     # @event = Event.new                # Needed for turbo-frames?
 
     @current_user = User.find(current_user.id)
-    @event = @current_user.created_events.build
+    @event = @current_user.events.build
   end
 
   def create
     @current_user = current_user
-
-    @event = @current_user.created_events.create(event_params)
+    @event = @current_user.events.create(event_params)
 
     if @event.save
       respond_to do |format|
@@ -64,6 +63,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:event_date, :description)
+    params.require(:event).permit(:event_date, :description, :creator_id)
   end
 end
