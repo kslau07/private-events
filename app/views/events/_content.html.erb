@@ -3,11 +3,11 @@
   <%= turbo_frame_tag Event.new %>
   <%= turbo_frame_tag "events" do %>
     <div>
-      <h3 class="container__category container__category--color-one">upcoming events</h3>
+      <h3 class="container__category container__category--color-five">upcoming events</h3>
       <%= render(partial: 'event', collection: @events.future, spacer_template: "spacer") || render(partial: 'empty_list') %>
     </div>
     <div>
-      <h3 class="container__category container__category--color-four">past events</h3>
+      <h3 class="container__category container__category--color-one">past events</h3>
       <%= render(partial: 'event', collection: @events.past, spacer_template: "spacer") || render(partial: 'empty_list') %>
     </div>
   <% end %>

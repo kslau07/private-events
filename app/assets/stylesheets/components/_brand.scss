@@ -2,16 +2,33 @@
 	display: flex;
 	align-items: center;
 	min-width: max-content;
+	transition: color 200ms;
 
-	
-	&__logo {
+	&__svg-logo {
 		padding-right: var(--space-xxs);
+		width: 50px;
+		height: 50px;
+		transition: fill 200ms;
 
+		&:hover,
+		&:focus,
+		&:active {
+			fill: var(--color-two);
+			cursor: pointer;
+		}
 	}
+	
 	&__text {
 		font-family: var(--font-family-brand);
 		font-size: var(--font-size-xxxxl);
 		letter-spacing: var(--brand-letter-spacing);
 		padding-right: var(--space-xxl);
 	}
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--color-five);
+		fill: var(--color-two);
+  }
 }

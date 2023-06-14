@@ -7,7 +7,7 @@
       <h2>my events</h2>
     </div>
     <div>
-      <h3 class="container__category">created events</h3>
+      <h3 class="container__category">manage created events</h3>
       <%= render(partial: 'events/event',
           collection: current_user.events,
           spacer_template: "events/spacer") || render(partial: 'events/empty_list') %>

@@ -8,8 +8,9 @@
         <%= @event.event_date.strftime('%B') %>
         <%= @event.event_date.strftime('%-e').to_i.ordinalize %>,
         <%= @event.event_date.strftime('%A') %>
-        <span class="event-full__creator"> --created by <%= @event.creator.email %></span>
       </span>
+      <div><%= @event.event_date.strftime('%Y') %></div>
+      <div class="event-full__creator"> --created by <%= @event.creator.email %></div>
       
       <h2 class="event-full__list-title">attendees:</h2>
       <% @event.attendees.each_with_index do |attendee, i| %>
