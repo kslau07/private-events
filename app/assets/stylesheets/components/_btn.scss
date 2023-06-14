@@ -56,11 +56,27 @@
     }
   }
 
+  &--med {
+    font-size: var(--font-size-m);
+    color: var(--color-text-off-white);
+    padding-top: var(--space-xxxs);
+    padding-bottom: var(--space-xxxs);
+  }
+
   &--short {
     font-size: var(--font-size-m);
     color: var(--color-text-off-white);
     padding-top: var(--space-xxxxs);
     padding-bottom: var(--space-xxxxs);
+  }
+
+  &--crud {
+    font-size: var(--font-size-m);
+    color: var(--color-text-off-white);
+    padding-top: var(--space-xxxxs);
+    padding-bottom: var(--space-xxxxs);
+    padding-left: var(--space-xs);
+    padding-right: var(--space-xs);
   }
 
   &--wide {

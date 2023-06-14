@@ -10,19 +10,17 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = current_user.events.build
+    @event = Event.new
   end
 
   def create
-    @event = current_user.events.create(event_params)
+    @event = current_user.events.build(event_params)
 
     if @event.save
       respond_to do |format|
         format.html { redirect_to events_path, notice: 'Your event was created successfully!' }
         format.turbo_stream
       end
-
-      # redirect_to events_path, notice: 'Your event was created successfully!'
     else
       render :new, status: :unprocessable_entity
     end

@@ -15,22 +15,29 @@
               class: "event-compact__description" %>
     <% if current_user&.id == event.creator_id %>
       <div class="event-compact__actions">
-        <%= link_to "edit", edit_event_path(event), class: "btn btn--secondary btn--short" %>
-        <%= button_to "delete", event_path(event), 
+        <%= link_to image_tag("edit.svg", height: '22', alt: 'An image of a plus sign.'),
+                    edit_event_path(event),
+                    class: "btn btn--secondary btn--crud" %>
+        <%= link_to image_tag("delete.svg", height: '20', alt: 'An image of a plus sign.'),
+                    event_path(event),
+                    data: { "turbo-method": :delete },
+                    class: "btn btn--secondary btn--crud" %>
+
+        <%#= button_to "delete", event_path(event), 
                                 method: :delete, 
-                                class: "btn btn--secondary btn--short" %>
+                                class: "btn btn--secondary btn--crud" %>
       </div>
     <% elsif current_user && current_user&.id != event.creator_id %>
       <div class="event-compact__actions">
         <% if event.attendees.include?(current_user) %>
-          <%= button_to "unjoin", event_attendance_path(event, 0),
+          <%= button_to "unjoin event", event_attendance_path(event, 0),
                                           method: :delete,
                                           data: { turbo_frame: "_top" },
-                                          class: "btn btn--tertiary btn--short" %>
+                                          class: "btn btn--tertiary btn--med" %>
         <% else  %>
-          <%= button_to "join", event_attendances_path(event),
+          <%= button_to "join event", event_attendances_path(event),
                             data: { turbo_frame: "_top" },
-                            class: "btn btn--primary btn--short" %>
+                            class: "btn btn--primary btn--med" %>
         <% end %>
       </div>
     <% else %>
