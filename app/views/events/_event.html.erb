@@ -28,12 +28,12 @@
     <% elsif current_user && current_user&.id != event.creator_id %>
       <div class="event-compact__actions">
         <% if event.attendees.include?(current_user) %>
-          <%= button_to "unjoin event", event_attendance_path(event, 0),
+          <%= button_to "unjoin event", event_attendance_path(event, current_user.id),
                                           method: :delete,
                                           data: { turbo_frame: "_top" },
                                           class: "btn btn--tertiary btn--med" %>
         <% else  %>
-          <%= button_to "join event", event_attendances_path(event),
+          <%= button_to "join event", event_attendances_path(event, current_user.id),
                             data: { turbo_frame: "_top" },
                             class: "btn btn--primary btn--med" %>
         <% end %>
