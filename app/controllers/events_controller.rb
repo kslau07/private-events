@@ -11,8 +11,6 @@ class EventsController < ApplicationController
 
   def new
     @event = current_user.events.build
-
-    # @event = Event.new
   end
 
   def create
@@ -40,8 +38,6 @@ class EventsController < ApplicationController
         format.html { redirect_to events_path, notice: 'Your event was updated successfully!' }
         format.turbo_stream
       end
-
-      # redirect_to events_path, notice: 'Your event was updated!'
     else
       render :edit, status: :unprocessable_entity
     end

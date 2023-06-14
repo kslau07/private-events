@@ -16,5 +16,4 @@ class Event < ApplicationRecord
   # def self.future
   #   where('event_date > ?', Time.now)
   # end
-
 end

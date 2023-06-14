@@ -3,9 +3,6 @@ class AttendancesController < ApplicationController
     @event = Event.find(params[:event_id])
     @user = User.find(params[:format]) # why is our user id passed in as format?
     @event.attendees << @user
-    
-    #@event.attendees << current_user
-
     redirect_to events_path, notice: 'You joined an event!.'
   end
 

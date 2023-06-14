@@ -1,6 +1,5 @@
 <%= turbo_frame_tag event do %>						<!-- turbo_frame for destroy and edit -->
   <div class="event-compact">
-    <!--a href="<%= event_path(event.id) %>"-->
     <a href="<%= event_path(event.id)%>" data-turbo-frame="_top">
       <span class="event-compact__date">
         <%= event.event_date.strftime('%B') %>
@@ -21,9 +20,6 @@
                     event_path(event),
                     data: { "turbo-method": :delete },
                     class: "btn btn--secondary btn--crud" %>
-        <%#= button_to "delete", event_path(event), 
-                                method: :delete, 
-                                class: "btn btn--secondary btn--crud" %>
       </div>
     <% elsif current_user && current_user&.id != event.creator_id %>
       <div class="event-compact__actions">

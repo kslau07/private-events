@@ -6,7 +6,6 @@
 	min-width: max-content;	
 	font-size: var(--font-size-l);	
 	box-shadow: var(--shadow-large);
-	// justify-content: center;
 	align-items: center;
 	padding: var(--space-m);
 
@@ -18,8 +17,6 @@
 	}
 
 	&__creator {
-		// color:red;
-		// outline: 3px dashed orangered;            // delete me
 		color: var(--color-four);
 	}
 

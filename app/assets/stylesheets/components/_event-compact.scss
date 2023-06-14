@@ -3,8 +3,6 @@
 	justify-content: space-between;
 	background-color: var(--color-bg-white);
 	border-radius: var(--border-radius);
-	// min-width: max-content;
-	// width: var(--fixed-width);
 	font-size: var(--font-size-l);	
 	flex-direction: row;
 	align-items: center;
@@ -19,13 +17,8 @@
 	}
 
 	&__description {
-		// outline: 3px dashed orangered;            // delete me
 		display: inline-block;											// Do not remove
-		// width: 25rem;
 		flex: 1 1 0;
-		// max-width: min-content;
-		// flex-shrink: 1;
-		// max-width: 15rem;
 		white-space: nowrap; 
 		overflow: hidden;
 		text-overflow: ellipsis; 
@@ -34,21 +27,11 @@
 	}
 
 	&__creator {
-		// display: inline-block;
 		font-size: var(--font-size-xs);
 	}
 
 	&__actions {
 		display: flex;
 		gap: var(--space-xs);
-		
-		// display: flex;
-		// flex: 0 0 auto; 				// grow 0, shrink 0, flex-basis auto
-		// align-self: flex-start;
-		// gap: var(--space-xs);
-		// margin-left: auto;
-		// align-self: flex-end;
-		// justify-self: flex-end;
-
 	}
 }

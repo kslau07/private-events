@@ -4,7 +4,6 @@
     <h2>New Event</h2>
   </div>
   <%= turbo_frame_tag Event.new do %>
-    <!-- @event is Event.new from controller -->
     <%= render "form", event: @event %>
     <%= render "events/spacer" %>								<!-- Probably not ideal, use other way next project -->
   <% end %>

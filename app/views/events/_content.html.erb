@@ -2,7 +2,6 @@
   <%= render "event-add-bar" %>
   <%= turbo_frame_tag Event.new %>
   <%= turbo_frame_tag "events" do %>
-    <!-- "event-list" -->
     <div>
       <h3 class="container__category container__category--color-one">upcoming events</h3>
       <%= render(partial: 'event', collection: @events.future, spacer_template: "spacer") || render(partial: 'empty_list') %>
