@@ -8,11 +8,13 @@
     </div>
   </div>
   <div class="links">
+    <%#= link_to "all events", events_path, class: "link link--active", data: { turbo_frame: '_top' }  %>
     <%= link_to "all events", events_path, class: "link #{"link--active" if link == 'one'}", data: { turbo_frame: '_top' }  %>
     <% if current_user %>
+      <%#= link_to "my events", user_path(current_user.id), class: "link links--split" %>
       <%= link_to "my events", user_path(current_user.id), class: "link links--split #{"link--active" if link == 'two'}" %>
       <%= link_to current_user.email, user_path(current_user.id), class: "link" %>
-      <%= link_to "sign out", destroy_user_session_path, class: "link", method: :delete %>
+      <%= link_to "sign out", destroy_user_session_path, class: "link", method: :delete, data: { turbo_method: :delete } %>
     <% else %>
       <%= link_to "my events", new_user_session_path, class: "link links--split" %>
       <%= link_to "sign up", new_user_registration_path, class: "link" %>

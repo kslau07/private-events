@@ -1,19 +1,29 @@
-<%= render "announcement" %>
 <div class="events">
+  <%= render "announcement" %>
   <%= render "events/navbar", link: 'two' %>
+  <%#= render "events/navbar" %>
   <main class="content container">
     <div class="header">
       <h2>my events</h2>
     </div>
     <div>
-      <h3>upcoming events</h3>
+      <h3 class="container__category">created events</h3>
+      <%= render(partial: 'events/event',
+          collection: current_user.events,
+          spacer_template: "events/spacer") || render(partial: 'events/empty_list') %>
     </div>
     <div>
-      <h3>past events</h3>
+      <h3 class="container__category container__category--color-five">upcoming events</h3>
+      <%= render(partial: 'events/event',
+          collection: current_user.attended_events.where("event_date > ?", Time.now),
+          spacer_template: "events/spacer") || render(partial: 'events/empty_list') %>
     </div>
-    <%= render(partial: 'events/event',
-              collection: @user.events + @user.attended_events,
-              spacer_template: "events/spacer") || render(partial: 'events/empty_list') %>
+    <div>
+      <h3 class="container__category container__category--color-one">past events</h3>
+      <%= render(partial: 'events/event',
+          collection: current_user.attended_events.where("event_date < ?", Time.now),
+          spacer_template: "events/spacer") || render(partial: 'events/blank_list') %>
+    </div>
   </main>
   <%= render "events/footer" %>
 </div>

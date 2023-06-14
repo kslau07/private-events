@@ -8,13 +8,15 @@
         <%= @event.event_date.strftime('%B') %>
         <%= @event.event_date.strftime('%-e').to_i.ordinalize %>,
         <%= @event.event_date.strftime('%A') %>
-        <span class="event-full__creator">---created by <%= @event.creator.email %></span>
+        <span class="event-full__creator"> --created by <%= @event.creator.email %></span>
       </span>
-      <%# change/delete me %>
+      
       <h2 class="event-full__list-title">attendees:</h2>
       <% @event.attendees.each_with_index do |attendee, i| %>
         <div><%= "#{i+1}. #{attendee.email}" %></div>
       <% end %>
     </div>
   </div>
+  <%= render "spacer" %>
+  <%= render "invite" if current_user == @event.creator %>
 </main>

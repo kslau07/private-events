@@ -5,5 +5,17 @@
 	margin-right: auto;
 	max-width: 60rem;
 
+	&__category {
+		text-align: left;
+		padding-top: var(--space-l);
+		padding-bottom: var(--space-xs);
+	}
 
+	&__category--color-five {
+		color: var(--color-five);
+	}
+
+	&__category--color-one {
+		color: var(--color-one);
+	}
 }
