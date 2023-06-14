@@ -3,16 +3,15 @@
   <div class="event-full">
     <%= image_tag "event.svg", { class: 'class_name', size: "250", alt: 'A picture of a calendar with a checkmark.' }%>
     <div class="event-full__info">
+      <span class="event-full__title"><%= @event.description %></span>
       <span>
         <%= @event.event_date.strftime('%B') %>
         <%= @event.event_date.strftime('%-e').to_i.ordinalize %>,
         <%= @event.event_date.strftime('%A') %>
+        <span class="event-full__creator">---created by <%= @event.creator.email %></span>
       </span>
-      <h1><%= @event.description %></h1>
-      <span>created by <%= @event.creator.email %></span>
-      
       <%# change/delete me %>
-      <div>attendees:</div>
+      <h2 class="event-full__list-title">attendees:</h2>
       <% @event.attendees.each_with_index do |attendee, i| %>
         <div><%= "#{i+1}. #{attendee.email}" %></div>
       <% end %>

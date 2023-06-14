@@ -14,5 +14,21 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-xxxs);
+		padding-left: var(--space-m);
+	}
+
+	&__creator {
+		// color:red;
+		// outline: 3px dashed orangered;            // delete me
+		color: var(--color-four);
+	}
+
+	&__title {
+		font-size: var(--font-size-xxxxl);
+		font-weight: bold;
+	}
+
+	&__list-title {
+		padding-top: var(--space-m);
 	}
 }

@@ -20,10 +20,18 @@
                                 method: :delete, 
                                 class: "btn btn--secondary btn--short" %>
       </div>
-    <% elsif current_user && current_user&.id != event.user_id %>
+    <% elsif current_user && current_user&.id != event.creator_id %>
       <div class="event-compact__actions">
-        <%# This is a button which sends POST to attendance#create. %>
-        <%= button_to "test", event_attendances_path(event) %>
+        <% if event.attendees.include?(current_user) %>
+          <%= button_to "unjoin", event_attendance_path(event, 0),
+                                          method: :delete,
+                                          data: { turbo_frame: "_top" },
+                                          class: "btn btn--tertiary btn--short" %>
+        <% else  %>
+          <%= button_to "join", event_attendances_path(event),
+                            data: { turbo_frame: "_top" },
+                            class: "btn btn--primary btn--short" %>
+        <% end %>
       </div>
     <% else %>
       <span class="event-compact__creator"><%= event.creator.email %></span>
