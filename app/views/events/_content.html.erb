@@ -1,12 +1,8 @@
-	
 <main class="content container">
-
-	<%= render "event-add-bar" %>
-
-	<%= turbo_frame_tag Event.new %>
-
-	<%= turbo_frame_tag "events" do %>
-		<!-- "event-list" -->
-		<%= render(partial: 'event', collection: @events, spacer_template: "spacer") || render(partial: 'empty_list') %>		
-	<% end %>
+  <%= render "event-add-bar" %>
+  <%= turbo_frame_tag Event.new %>
+  <%= turbo_frame_tag "events" do %>
+    <!-- "event-list" -->
+    <%= render(partial: 'event', collection: @events, spacer_template: "spacer") || render(partial: 'empty_list') %>
+  <% end %>
 </main>

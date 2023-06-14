@@ -8,7 +8,6 @@
         <%= event.event_date.strftime('%A') %>
       </span>
     </a>
-    <div><%= event.id %></div>
     <%= link_to event.description, 
               event_path(event.id), 
               data: { turbo_frame: "_top" },
@@ -22,7 +21,6 @@
                     event_path(event),
                     data: { "turbo-method": :delete },
                     class: "btn btn--secondary btn--crud" %>
-
         <%#= button_to "delete", event_path(event), 
                                 method: :delete, 
                                 class: "btn btn--secondary btn--crud" %>

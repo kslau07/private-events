@@ -1,10 +1,19 @@
-<%= render "back" %>
-<main class="container">
-  <div class="header">
-    <h2>my events</h2>
-    <span><%= @user.email %></span>
-  </div>
-  <%= render(partial: 'events/event', 
-            collection: @user.events + @user.attended_events, 
-            spacer_template: "events/spacer") || render(partial: 'events/empty_list') %>
-</main>
+<%= render "announcement" %>
+<div class="events">
+  <%= render "events/navbar", link: 'two' %>
+  <main class="content container">
+    <div class="header">
+      <h2>my events</h2>
+    </div>
+    <div>
+      <h3>upcoming events</h3>
+    </div>
+    <div>
+      <h3>past events</h3>
+    </div>
+    <%= render(partial: 'events/event',
+              collection: @user.events + @user.attended_events,
+              spacer_template: "events/spacer") || render(partial: 'events/empty_list') %>
+  </main>
+  <%= render "events/footer" %>
+</div>

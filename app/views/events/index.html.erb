@@ -1,17 +1,6 @@
-  <%= render "announcement" %>
+<%= render "announcement" %>
 <div class="events">
-  <%= render "navbar" %>
+  <%= render "navbar", link: 'one' %>
   <%= render "content" %>
   <%= render "footer" %>
 </div>
-<%
-=begin %>
-<% if flash.empty? %>
-  <span class="announcement--normal">"New features added this week!"</span>
-<% else %>
-  <% flash.each do |type, msg| %>
-    <span class="announcement--flash"><%= msg %></span>
-  <% end %>
-<% end %>
-<%
-=end %>

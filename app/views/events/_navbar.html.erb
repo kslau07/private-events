@@ -1,23 +1,22 @@
 <header class="navbar">
-		<div class="brand">
-			<div class="brand__logo">
-				<%= image_tag "spy.svg",  { class: 'navbar__logo', alt: 'A logo of a spy.', size: "40" }%>
-			</div>
-			<div class="brand__text">
-				<h2>private events</h2>
-			</div>
-		</div>
-		<div class="links">
-			<%= link_to "all events", new_event_path, class: "link link--active" %>
-
-			<% if current_user %>
-				<%= link_to "my events", user_path(current_user.id), class: "link links--split" %>
-				<%= link_to current_user.email, user_path(current_user.id), class: "link" %>
-				<%= link_to "sign out", destroy_user_session_path, class: "link", method: :delete, data: { turbo_method: :delete } %>
-			<% else %>
-				<%= link_to "my events", new_user_session_path, class: "link links--split" %>
-				<%= link_to "sign up", new_user_registration_path, class: "link" %>
-				<%= link_to "log in", new_user_session_path, class: "link" %>
-			<% end %>
-		</div>
-	</header>
+  <div class="brand">
+    <div class="brand__logo">
+      <%= image_tag "spy.svg",  { class: 'navbar__logo', alt: 'A logo of a spy.', size: "40" }%>
+    </div>
+    <div class="brand__text">
+      <h2>private events</h2>
+    </div>
+  </div>
+  <div class="links">
+    <%= link_to "all events", events_path, class: "link #{"link--active" if link == 'one'}", data: { turbo_frame: '_top' }  %>
+    <% if current_user %>
+      <%= link_to "my events", user_path(current_user.id), class: "link links--split #{"link--active" if link == 'two'}" %>
+      <%= link_to current_user.email, user_path(current_user.id), class: "link" %>
+      <%= link_to "sign out", destroy_user_session_path, class: "link", method: :delete %>
+    <% else %>
+      <%= link_to "my events", new_user_session_path, class: "link links--split" %>
+      <%= link_to "sign up", new_user_registration_path, class: "link" %>
+      <%= link_to "log in", new_user_session_path, class: "link" %>
+    <% end %>
+  </div>
+</header>
