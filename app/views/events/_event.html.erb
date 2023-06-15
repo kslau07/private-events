@@ -10,7 +10,7 @@
     <div class="event-compact__info-container">
       <div class="event-compact__info-row-one">
         <span class="event-compact__label">event:</span>
-        <%= link_to event.title, 
+        <%= link_to "\"#{event.title}\"", 
               event_path(event.id), 
               data: { turbo_frame: "_top" },
               class: "event-compact__title" %>
