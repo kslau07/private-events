@@ -7,22 +7,36 @@
 	font-size: var(--font-size-l);	
 	box-shadow: var(--shadow-large);
 	align-items: center;
-	padding: var(--space-m);
+	padding: var(--space-xl);
 
 	&__info {
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-xxxs);
-		padding-left: var(--space-m);
+		padding-left: var(--space-xxl);
+	}
+
+	&__title {
+		color: var(--color-two);
+		font-size: var(--font-size-xxxxl);
+		font-weight: bold;
+		padding-bottom: var(--space-xs);
+	}
+
+	&__date {
+		font-size: var(--font-size-m);
+		font-style: italic;
+		padding-bottom: var(--space-m);
 	}
 
 	&__creator {
 		color: var(--color-four);
 	}
 
-	&__title {
-		font-size: var(--font-size-xxxxl);
-		font-weight: bold;
+	&__description {
+		// outline: 3px dashed orangered;            // delete me
+		padding-bottom: var(--space-xs);
+		max-width: 30rem;
 	}
 
 	&__list-title {

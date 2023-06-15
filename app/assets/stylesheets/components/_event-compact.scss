@@ -12,18 +12,71 @@
 
 	&__date {
 		display: inline-block;
+		font-size: var(--font-size-s);
+		width: var(--space-l);
+	}
+
+	&__info-container {
+		// outline: 3px dashed orangered;            // delete me
+		display: flex;
+		flex-direction: column;
+		max-width: 25rem;
+		
+	}
+
+	&__label {
+		color: var(--color-two);
 		font-size: var(--font-size-xs);
-		width: 6rem;
+	}
+
+	&__info-row-one {
+		// outline: 1px dashed green;            // delete me
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		justify-content: left;
+		padding: var(--space-xs);
+	}
+
+	&__title {
+		// outline: 3px dashed orangered;            // delete me
+
+		flex: 1;
+		text-align: center;
+		// align-self: center;
+		// justify-self: center;
+		font-size: var(--font-size-xxl);
+		font-weight: bold;
+		padding-left: var(--space-m);
+		// text-align: center;
+	}
+
+	&__info-row-two {
+		// align-items: center;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		// justify-content: flex-end;
+
+		// outline: 3px dashed orangered;            // delete me
+		padding: var(--space-xs);
+
 	}
 
 	&__description {
-		display: inline-block;											// Do not remove
-		flex: 1 1 0;
+		// outline: 3px dashed orangered;            // delete me
+		// display: flex;
+		// display: inline-block;											// Do not remove
+		// align-self: flex-start;
+		// vertical-align: bottom;
+		color: var(--color-three);
+		font-size: var(--font-size-s);
+		padding-left: var(--space-m);
 		white-space: nowrap; 
 		overflow: hidden;
 		text-overflow: ellipsis; 
-		vertical-align: bottom;
-		text-align: center;
+		// flex: 1 1 0;
+		// text-align: center;
 	}
 
 	&__creator {

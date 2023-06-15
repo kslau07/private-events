@@ -7,10 +7,19 @@
         <%= event.event_date.strftime('%A') %>
       </span>
     </a>
-    <%= link_to event.description, 
+    <div class="event-compact__info-container">
+      <div class="event-compact__info-row-one">
+        <span class="event-compact__label">event:</span>
+        <%= link_to event.title, 
               event_path(event.id), 
               data: { turbo_frame: "_top" },
-              class: "event-compact__description" %>
+              class: "event-compact__title" %>
+      </div>
+      <div class="event-compact__info-row-two">
+        <span class="event-compact__label">description:</span>
+        <span class="event-compact__description"><%= event.description %></span>
+      </div>
+    </div>
     <% if current_user&.id == event.creator_id %>
       <div class="event-compact__actions">
         <%= link_to image_tag("edit.svg", height: '22', alt: 'An image of a plus sign.'),
