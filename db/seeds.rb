@@ -14,7 +14,7 @@ end
 def random_event_text_content
   [[Faker::Restaurant.name + [' Grand Opening', ' Charity Cookoff'].sample, Faker::Restaurant.description],
    [Faker::Esport.event + [' Finals', ' ESporting Event'].sample,
-    Faker::Esport.player + 'who plays for ' + Faker::Esport.team + ' will be signing autographs.'],
+    Faker::Esport.player + 'who plays for ' + Faker::Esport.team + ' will be meeting fans and signing autographs'],
    [Faker::Kpop.iii_groups + [' Live in Concert', ' Autograph Signing'].sample,
     'KPOP sensation will be here for one night only as they continue to tour the U.S.'],
    [Faker::Company.name + ' Company Function',
@@ -28,7 +28,7 @@ end
 num_events.times do
   random_title, random_description = random_event_text_content
   Event.create!(event_date: random_date, creator_id: (rand(num_users) + 1), title: random_title,
-                description: random_description)
+                description: random_description, location: "#{Faker::Address.city}, #{Faker::Address.state}")
 end
 
 num_attendances.times do

@@ -19,6 +19,10 @@
         <span class="event-compact__label">description:</span>
         <span class="event-compact__description"><%= event.description %></span>
       </div>
+      <div class="event-compact__info-row-three">
+        <span class="event-compact__label">location:</span>
+        <span class="event-compact__location"><%= event.location %></span>
+      </div>
     </div>
     <% if current_user&.id == event.creator_id %>
       <div class="event-compact__actions">

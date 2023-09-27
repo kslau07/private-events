@@ -57,6 +57,8 @@ gem 'bullet'
 gem 'devise'
 gem 'htmlbeautifier'
 gem 'responders'
+gem 'rubocop'
+gem 'rubocop-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

@@ -5,26 +5,26 @@
 // mixins
 @import 'mixins/mixins';
 
+// components
+@import "components/_footer";
+@import "components/_invite";
+@import "components/_form";
+@import "components/_announcement";
+@import "components/_brand";
+@import "components/_btn";
+@import "components/_content";
+@import "components/_event-compact";
+@import "components/_back";
+@import "components/_event-full";
+@import "components/_error-message";
+@import "components/_links";
+@import "components/_empty-list";
+@import "components/_container";
+@import "components/_navbar";
+@import "components/_link";
+@import "components/_svg";
+
 // layouts
-@import "layouts/_devise";
 @import "layouts/_header";
 @import "layouts/_main";
-
-// components
-@import "components/_empty-list";
-@import "components/_content";
-@import "components/_back";
-@import "components/_event-compact";
-@import "components/_error-message";
-@import "components/_footer";
-@import "components/_form";
-@import "components/_btn";
-@import "components/_announcement";
-@import "components/_link";
-@import "components/_container";
-@import "components/_brand";
-@import "components/_event-full";
-@import "components/_svg";
-@import "components/_links";
-@import "components/_invite";
-@import "components/_navbar";
+@import "layouts/_devise";
