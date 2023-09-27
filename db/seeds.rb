@@ -14,11 +14,11 @@ end
 def random_event_text_content
   [[Faker::Restaurant.name + [' Grand Opening', ' Charity Cookoff'].sample, Faker::Restaurant.description],
    [Faker::Esport.event + [' Finals', ' ESporting Event'].sample,
-    Faker::Esport.player + 'who plays for ' + Faker::Esport.team + ' will be meeting fans and signing autographs'],
+    "#{Faker::Esport.player} who plays for #{Faker::Esport.team} will be meeting fans and signing autographs"],
    [Faker::Kpop.iii_groups + [' Live in Concert', ' Autograph Signing'].sample,
     'KPOP sensation will be here for one night only as they continue to tour the U.S.'],
-   [Faker::Company.name + ' Company Function',
-    Faker::Company.industry + ' industry leader will host their charity event at...']].sample
+   ["#{Faker::Company.name} Company Function",
+    "#{Faker::Company.industry} industry leader will host their charity event at..."]].sample
 end
 
 num_users.times do

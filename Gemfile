@@ -56,7 +56,7 @@ gem 'better_errors'
 gem 'bullet'
 gem 'devise'
 gem 'htmlbeautifier'
-gem 'responders'
+gem 'responders'         # adds flash notices for certain controller actions
 gem 'rubocop'
 gem 'rubocop-rails'
 
@@ -68,7 +68,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'selenium-webdriver'
+  # gem 'selenium-webdriver' # not needed?
   gem 'warden'
   gem 'webdrivers'
 end

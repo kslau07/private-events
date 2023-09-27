@@ -8,13 +8,12 @@
       </span>
     </a>
     <div class="event-compact__info-container">
-      <div class="event-compact__info-row-one">
-        <span class="event-compact__label">event:</span>
-        <%= link_to "\"#{event.title}\"", 
-              event_path(event.id), 
+        <%= link_to event_path(event.id), 
               data: { turbo_frame: "_top" },
-              class: "event-compact__title" %>
-      </div>
+              class: "event-compact__info-row-one" do %>
+        <span class="event-compact__label event-compact__event-label">event:</span>
+        <span class="event-compact__title"><%= "#{event.title}" %></span>
+        <% end %>
       <div class="event-compact__info-row-two">
         <span class="event-compact__label">description:</span>
         <span class="event-compact__description"><%= event.description %></span>

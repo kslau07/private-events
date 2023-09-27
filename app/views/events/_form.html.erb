@@ -4,28 +4,32 @@
   <div class="form__field-couple form__field-couple--split form__field-couple--flex1">
     <%= form.label :title, "event name:" %>
     <%= form.text_field :title,
-												class: "form__input form__input--flex1",
-												placeholder: 'Cool Occassion',
-												input_html: { autofocus: true } %>
-  </div>
+			class: "form__input form__input--flex1",
+			placeholder: 'Cool Occassion',
+			input_html: { autofocus: true } %>
+</div>
 
-	  <div class="form__field-couple">
-    <%= form.label :date, "Date:" %>
-    <%= form.date_field :event_date, class: "form__input" %>
-  </div>
-  <div class="form__field-couple form__field-couple--split form__field-couple--flex1">
-    <%= form.label :description, "description:" %>
-    <%= form.text_field :description,
-												class: "form__input form__input--flex1",
-												placeholder: 'Expect a pretty awesome event because...',
-												input_html: { autofocus: true } %>
+<div class="form__field-couple">
+  <%= form.label :location, "location:" %>
+  <%= form.text_field :location, class: "form__input" %>
+</div>
+<div class="form__field-couple">
+  <%= form.label :date, "date:" %>
+  <%= form.date_field :event_date, class: "form__input" %>
+</div>
+<div class="form__field-couple form__field-couple--split form__field-couple--flex1">
+  <%= form.label :description, "description:" %>
+  <%= form.text_field :description,
+		class: "form__input form__input--flex1",
+		placeholder: 'Expect a pretty awesome event because...',
+		input_html: { autofocus: true } %>
   </div>
   <div class="form__actions">
     <%= link_to "cancel", events_path, class: "btn btn--tertiary btn--med" %>
     <% if action_name == 'new' %>
       <%= form.submit "create event", class: "btn btn--primary btn--med" %>
-    <% else action_name == 'edit' || action_name == 'create' %>
-      <%= form.submit "update event", class: "btn btn--primary btn--med" %>
-    <% end %>
+      <% else action_name == 'edit' || action_name == 'create' %>
+        <%= form.submit "update event", class: "btn btn--primary btn--med" %>
+      <% end %>
   </div>
 <% end %>

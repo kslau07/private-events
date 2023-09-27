@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -16,14 +18,31 @@
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
-class User < ApplicationRecord
-  has_many :events, foreign_key: :creator_id
+FactoryBot.define do
+  #  NOTE: delete me
+  # sequence :email do |n|
+  #   "user#{n}@example.com"
+  # end
 
-  has_many :attendances, foreign_key: :attendee_id
-  has_many :attended_events, through: :attendances
-
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  factory :user do
+    email { Faker::Internet.email }
+    # email { generate(:email) }
+    password { 'password123' }
+  end
 end
+
+
+# FactoryBot.define do
+#   sequence :email do |n|
+#     "user#{n}@example.com"
+#   end
+#
+#   factory :user do
+#     email { generate(:email) }
+#     password { 'password123' }
+#   end
+#
+#   trait :faker do
+#     email { Faker::Internet.email }
+#   end
+# end

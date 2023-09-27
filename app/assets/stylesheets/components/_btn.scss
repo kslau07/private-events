@@ -8,7 +8,9 @@
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
-  transition: filter 400ms, color 200ms;
+  transition:
+    filter 400ms,
+    color 200ms;
 
   &:hover,
   &:focus,
@@ -18,7 +20,11 @@
 
   &--primary {
     color: var(--color-text-white);
-    background-image: linear-gradient(to right, var(--color-two), var(--color-two-rotate));
+    background-image: linear-gradient(
+      to right,
+      var(--color-two),
+      var(--color-two-rotate)
+    );
 
     &:hover,
     &:focus,
@@ -31,7 +37,11 @@
 
   &--secondary {
     color: var(--color-text-white);
-    background-image: linear-gradient(to right, var(--color-four), var(--color-four-rotate));
+    background-image: linear-gradient(
+      to right,
+      var(--color-four),
+      var(--color-four-rotate)
+    );
 
     &:hover,
     &:focus,
@@ -44,7 +54,11 @@
 
   &--tertiary {
     color: var(--color-text-white);
-    background-image: linear-gradient(to right, var(--color-five), var(--color-five-rotate));
+    background-image: linear-gradient(
+      to right,
+      var(--color-five),
+      var(--color-five-rotate)
+    );
 
     &:hover,
     &:focus,
@@ -84,16 +98,20 @@
   }
 }
 
-         
 .btn-grad {
-  background-image: linear-gradient(to right, #83a4d4 0%, #b6fbff  51%, #83a4d4  100%);
+  background-image: linear-gradient(
+    to right,
+    #83a4d4 0%,
+    #b6fbff 51%,
+    #83a4d4 100%
+  );
   margin: 10px;
   padding: 15px 45px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;            
+  color: white;
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   display: block;
