@@ -22,12 +22,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_192208) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.integer "creator_id"
     t.date "event_date", null: false
     t.string "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "title"
+    t.integer "creator_id"
+    t.string "title", null: false
   end
 
   create_table "users", force: :cascade do |t|
