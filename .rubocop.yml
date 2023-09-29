@@ -5,7 +5,7 @@ Rails:
   Enabled: true
 
 Metrics/BlockLength:
-  AllowedMethods: ["describe", "context"]
+  AllowedMethods: ['describe', 'context', 'it', 'feature', 'scenario']
 
 Style/StringLiterals:
   Exclude:
@@ -20,6 +20,9 @@ AllCops:
     # - db/seeds.rb
     # - bin/**/*
     # - node_modules/**/*
+
+    # Style/StringLiterals:
+    # Enabled: false
 
     # Style/Documentation:
     # Enabled: false

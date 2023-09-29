@@ -26,23 +26,6 @@ FactoryBot.define do
 
   factory :user do
     email { Faker::Internet.email }
-    # email { generate(:email) }
     password { 'password123' }
   end
 end
-
-
-# FactoryBot.define do
-#   sequence :email do |n|
-#     "user#{n}@example.com"
-#   end
-#
-#   factory :user do
-#     email { generate(:email) }
-#     password { 'password123' }
-#   end
-#
-#   trait :faker do
-#     email { Faker::Internet.email }
-#   end
-# end
