@@ -14,8 +14,7 @@ RSpec.feature 'Creating an event', type: :system do
       click_link 'add an event'
       fill_in 'event_title', with: 'My Awesome Event'
       fill_in 'event_location', with: 'Clubhouse'
-      # HACK: couldn't use normal methods to find date
-      find('input[type=date]').send_keys(:arrow_up, :tab, :arrow_up, :tab, :arrow_up)
+      fill_in "event_event_date", with: "06/06/2023" 
       fill_in 'event_description', with: 'Expect fun times at the clubhouse'
       initial_count = Event.count
       click_button 'create event'
@@ -37,7 +36,7 @@ RSpec.feature 'Creating an event', type: :system do
       click_link 'add an event'
       fill_in 'event_title', with: ''
       fill_in 'event_location', with: 'Bob\'s House'
-      find('input[type=date]').send_keys(:arrow_up, :tab, :arrow_up, :tab, :arrow_up)
+      fill_in "event_event_date", with: "06/06/2023" 
       fill_in 'event_description', with: 'Bob is hosting a thing at his house'
       click_button 'create event'
       expect(page).to have_text('Title can\'t be blank')

@@ -19,7 +19,6 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 FactoryBot.define do
-  #  NOTE: delete me
   # sequence :email do |n|
   #   "user#{n}@example.com"
   # end

@@ -84,15 +84,13 @@
   }
 
   &--crud {
-    font-size: var(--font-size-m);
     color: var(--color-text-off-white);
+    font-size: var(--font-size-m);
     padding-block: var(--space-xxxs);
     padding-inline: var(--space-s);
   }
 
   &--invite {
-    // flex-basis: 100%;
-    font-size: var(--font-size-m);
     color: var(--color-text-off-white);
     padding-block: var(--space-xxxs);
     padding-inline: var(--space-s);

@@ -1,8 +1,7 @@
 .navbar {
-	grid-area: navbar;
-	display: flex;
 	align-items: center;
-	padding-left: var(--nav-bar-space-clamp);
-	padding-right: var(--nav-bar-space-clamp);
-	padding-top: var(--space-xxxs);
+	display: flex;
+	grid-area: navbar;
+	padding-block: var(--space-l);
+	padding-inline: var(--nav-bar-space-clamp);
 }

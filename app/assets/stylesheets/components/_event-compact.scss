@@ -1,15 +1,15 @@
 .event-compact {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   background-color: var(--color-bg-white);
   border-radius: var(--border-radius);
-  font-size: var(--font-size-l);
-  flex-direction: row;
-  align-items: center;
-  gap: var(--space-xl);
-  padding-inline: var(--space-xl);
-  padding-block: var(--space-xl);
   box-shadow: var(--shadow-small);
+  flex-direction: row;
+  font-size: var(--font-size-l);
+  gap: var(--space-xl);
+  justify-content: space-between;
+  padding-block: var(--space-xl);
+  padding-inline: var(--space-xl);
 
   &__date {
     display: inline-block;

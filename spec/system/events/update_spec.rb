@@ -16,6 +16,7 @@ RSpec.feature 'Updating an event', type: :system do
       click_button 'update event'
       expect(page).to have_css('.event-compact__title', wait: 5)
       event.reload
+      visit root_path
       expect(event.title).to eq 'My New Title'
     end
 

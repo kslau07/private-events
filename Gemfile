@@ -56,19 +56,20 @@ gem 'better_errors'
 gem 'bullet'
 gem 'devise'
 gem 'htmlbeautifier'
-gem 'responders'         # adds flash notices for certain controller actions
+gem 'responders' # adds flash notices for certain controller actions
 gem 'rubocop'
 gem 'rubocop-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  # gem 'selenium-webdriver' # not needed?
   gem 'annotate'
   gem 'capybara'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
-  # gem 'selenium-webdriver' # not needed?
   gem 'warden'
   gem 'webdrivers'
 end
