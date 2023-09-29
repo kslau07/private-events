@@ -8,12 +8,12 @@
       </span>
     </a>
     <div class="event-compact__info-container">
-        <%= link_to event_path(event.id), 
-              data: { turbo_frame: "_top" },
-              class: "event-compact__info-row-one" do %>
+      <%= link_to event_path(event.id), 
+        data: { turbo_frame: "_top" },
+        class: "event-compact__info-row-one" do %>
         <span class="event-compact__label event-compact__event-label">event:</span>
         <span class="event-compact__title"><%= "#{event.title}" %></span>
-        <% end %>
+      <% end %>
       <div class="event-compact__info-row-two">
         <span class="event-compact__label">description:</span>
         <span class="event-compact__description"><%= event.description %></span>
@@ -26,31 +26,35 @@
     <% if current_user&.id == event.creator_id %>
       <div class="event-compact__actions">
         <%= link_to image_tag("edit.svg", height: '22', alt: 'An image of a plus sign.'),
-                    edit_event_path(event),
-                    class: "btn btn--secondary btn--crud" %>
+          edit_event_path(event),
+          class: "btn btn--secondary btn--crud" %>
         <%= link_to image_tag("delete.svg", height: '20', alt: 'An image of a plus sign.'),
-                    event_path(event),
-                    data: { "turbo-method": :delete },
-                    class: "btn btn--secondary btn--crud" %>
-      </div>
-    <% elsif current_user && current_user&.id != event.creator_id %>
-      <div class="event-compact__actions">
-        <% if event.attendees.include?(current_user) %>
-          <%= button_to "unjoin event", event_attendance_path(event, current_user.id),
-                                          method: :delete,
-                                          data: { 
-                                            turbo_frame: "_top",
-                                            turbo_confirm: "Unjoin \"#{event.title}?\""
-                                           },
-                                          class: "btn btn--tertiary btn--med" %>
-        <% else  %>
-          <%= button_to "join event", event_attendances_path(event, current_user.id),
-                            data: { turbo_frame: "_top" },
-                            class: "btn btn--primary btn--med" %>
-        <% end %>
-      </div>
-    <% else %>
-      <span class="event-compact__creator"><%= event.creator.email %></span>
-    <% end %>
+          event_path(event),
+          data: { "turbo-method": :delete },
+          class: "btn btn--secondary btn--crud" %>
+        <%= link_to 'Invite people!',
+          "#{event_path(event)}/#invite_people",
+          data: { "turbo-frame": '_top' },
+          class: "btn btn--primary btn--invite" %>
+    </div>
+  <% elsif current_user && current_user&.id != event.creator_id %>
+    <div class="event-compact__actions">
+      <% if event.attendees.include?(current_user) %>
+        <%= button_to "unjoin event", event_attendance_path(event, current_user.id),
+          method: :delete,
+          data: { 
+            turbo_frame: "_top",
+            turbo_confirm: "Unjoin \"#{event.title}?\""
+          },
+          class: "btn btn--tertiary btn--med" %>
+      <% else  %>
+        <%= button_to "join event", event_attendances_path(event, current_user.id),
+          data: { turbo_frame: "_top" },
+          class: "btn btn--primary btn--med" %>
+      <% end %>
+    </div>
+  <% else %>
+    <span class="event-compact__creator"><%= event.creator.email %></span>
+  <% end %>
   </div>
 <% end %>

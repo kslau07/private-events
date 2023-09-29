@@ -1,17 +1,20 @@
 <div class="invite">
-	<h3 class="invite__title">Invite people!</h3>
+
+	<a id="invite_people">
+		<h3 class="invite__title" >Invite people!</h3>
+	</a>
 	<div class="invite__list">
 		<% User.all.each do |u| %>
 			<% next if u == current_user %>
 			<div class="invite__card">
 				<%= u.email %>
 				<% if @event.attendees.include?(User.find(u.id)) %>
-				<span class="invite__text--invited">User has been invited.</span>
+					<span class="invite__text--invited">User has been invited.</span>
 				<% else %>
-				<%= button_to "send invite", event_attendances_path(@event, u.id),
-													data: { turbo_frame: "_top" },
-													class: "btn btn--secondary btn--short" %>
-				<% end %>
+					<%= button_to "send invite", event_attendances_path(@event, u.id),
+						data: { turbo_frame: "_top" },
+						class: "btn btn--secondary btn--short" %>
+					<% end %>
 			</div>
 		<% end %>
 	</div>
