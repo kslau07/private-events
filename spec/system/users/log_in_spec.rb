@@ -4,13 +4,13 @@ require 'rails_helper'
 
 RSpec.describe 'User log in', type: :system do
   describe 'logging in with valid credentials through the root path' do
-    before :each do
+    before do
       @user = create(:user)
       visit events_path
       click_link 'log in'
     end
 
-    it 'redirects the user to the root path' do
+    it 'redirects the user to the root path log in is successful' do
       fill_in 'user_email', with: @user.email
       fill_in 'user_password', with: 'password123'
       click_button 'Log in'
@@ -18,8 +18,8 @@ RSpec.describe 'User log in', type: :system do
     end
   end
 
-  describe 'logging in with an invalid password, error message appears' do
-    before :each do
+  describe 'logging in with an invalid password shows an error message' do
+    before do
       @user = create(:user)
       visit new_user_session_path
     end

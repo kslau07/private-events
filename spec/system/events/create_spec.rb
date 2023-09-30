@@ -14,14 +14,13 @@ RSpec.feature 'Creating an event', type: :system do
       click_link 'add an event'
       fill_in 'event_title', with: 'My Awesome Event'
       fill_in 'event_location', with: 'Clubhouse'
-      fill_in "event_event_date", with: "06/06/2023" 
+      fill_in 'event_event_date', with: '06/06/2023'
       fill_in 'event_description', with: 'Expect fun times at the clubhouse'
-      initial_count = Event.count
-      click_button 'create event'
-      expect(page).to have_css('.event-compact__title', wait: 5)
-      final_count = Event.count
-      difference = 1
-      expect(final_count - initial_count).to eq(difference)
+
+      expect do
+        click_button 'create event'
+        expect(page).to have_css('.event-compact__title', wait: 5)
+      end.to change(Event, :count).to be 1
     end
   end
 
@@ -36,7 +35,7 @@ RSpec.feature 'Creating an event', type: :system do
       click_link 'add an event'
       fill_in 'event_title', with: ''
       fill_in 'event_location', with: 'Bob\'s House'
-      fill_in "event_event_date", with: "06/06/2023" 
+      fill_in 'event_event_date', with: '06/06/2023'
       fill_in 'event_description', with: 'Bob is hosting a thing at his house'
       click_button 'create event'
       expect(page).to have_text('Title can\'t be blank')

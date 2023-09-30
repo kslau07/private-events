@@ -31,7 +31,8 @@
         <%= link_to image_tag("delete.svg", height: '20', alt: 'An image of a plus sign.'),
           event_path(event),
           data: { "turbo-method": :delete },
-          class: "btn btn--secondary btn--crud" %>
+          class: "btn btn--secondary btn--crud",
+          id: "delete-event" %>
         <%= link_to 'invite people!',
           "#{event_path(event)}/#invite_people",
           data: { "turbo-frame": '_top' },

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Creating a user', type: :system do
   feature 'Signing up with valid inputs through the root path' do
-    before :each do
+    before do
       visit events_path
       click_link 'sign up'
     end
@@ -17,7 +17,7 @@ RSpec.feature 'Creating a user', type: :system do
   end
 
   feature 'Signing up with incorrect inputs through the root path' do
-    before :each do
+    before do
       visit events_path
       click_link 'sign up'
     end

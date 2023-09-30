@@ -15,16 +15,21 @@ RSpec.feature 'Create an attendance (invitation)', type: :system do
       # driven_by(:rack_test)
       login_as(user, scope: :user)
       create_event_manually
-    end
-
-    scenario 'User selects another user to invite from the list' do
       visit root_path
       click_link 'invite people!'
-      sleep 4
+    end
 
-      within('.content-container') do
-        expect(page).to have_content('text content when invite is successful')
+    scenario 'User navigates to "invite people" page and sees "send invite" buttons' do
+      within('.invite') do
+        expect(page).to have_content('invite people!')
+        expect(page).to have_content('send invite')
       end
+    end
+
+    scenario 'User clicks "send invite" button and attendance count goes up by 1' do
+      expect do
+        click_button('send invite', match: :first)
+      end.to change(Attendance, :count).by(1)
     end
 
     def create_event_manually
