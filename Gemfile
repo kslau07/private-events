@@ -55,7 +55,7 @@ gem 'bootsnap', require: false
 gem 'better_errors'
 gem 'bullet'
 gem 'devise'
-gem 'htmlbeautifier'
+# gem 'htmlbeautifier'
 gem 'responders' # adds flash notices for certain controller actions
 gem 'rubocop'
 gem 'rubocop-rails'

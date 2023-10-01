@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Destroy an event', type: :system do
-  feature 'User clicks on foo' do
+  feature 'User clicks on delete icon' do
     let!(:user) { FactoryBot.create(:user) }
 
     before do
