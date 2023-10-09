@@ -49,7 +49,7 @@ RSpec.describe User, type: :model do
     it 'is not valid if password is less than 6 characters long' do
       user = User.create(email: 'test@example.com', password: '12345')
       expect(user).not_to be_valid
-      expect(user.errors[:password]).to eq ["is too short (minimum is 6 characters)"]
+      expect(user.errors[:password]).to eq ['is too short (minimum is 6 characters)']
     end
   end
 end

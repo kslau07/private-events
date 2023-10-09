@@ -3,14 +3,28 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @events, status: :ok }
+    end
   end
 
   def show
     @event = Event.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @event, status: :ok }
+    end
   end
 
   def new
     @event = current_user.events.build
+  end
+
+  def edit
+    @event = Event.find(params[:id])
   end
 
   def create
@@ -24,10 +38,6 @@ class EventsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @event = Event.find(params[:id])
   end
 
   def update

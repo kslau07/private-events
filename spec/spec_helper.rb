@@ -17,7 +17,12 @@
 # require 'capybara/rspec' # or 'capybara/minitest' for Minitest
 # Capybara.default_max_wait_time = 5
 
+# Could not get IntegrationHelpers working, use custom method instead
+# located in spec/support/shared_context
+# require 'devise'
+
 RSpec.configure do |config|
+  # config.include Devise::Test::IntegrationHelpers
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
